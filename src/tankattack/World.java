@@ -14,6 +14,7 @@ import javafx.scene.image.*;
 import javafx.scene.paint.*;
 import javafx.scene.shape.*;
 import javafx.stage.*;
+import javafx.util.*;
 
 /**
  *
@@ -77,21 +78,31 @@ public abstract class World {
         
     }
     
-    public KeyFrame createKeyFrame(int NUM_FRAMES_PER_SECOND) {
-        
-        throw new UnsupportedOperationException("Not supported yet.");
-        
-    }
-    
     public void initAnimation() {
         
+        KeyFrame frame = new KeyFrame(Duration.millis(1000 / TankAttack.NUM_FRAMES_PER_SECOND), e -> updateSprites());
         
+        if (timeline == null) {
+            
+            timeline = new Timeline();
+            
+        }        
+        
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.getKeyFrames().add(frame);
+        timeline.play();
         
     }
 
     private void createInitialSprites(Group root) {
         
-        throw new UnsupportedOperationException("Not supported yet."); 
+//        throw new UnsupportedOperationException("Not supported yet."); 
+        
+    }
+
+    private void updateSprites() {
+
+        System.out.println("All is well. Printing animation 60 times a second.");
         
     }
 
