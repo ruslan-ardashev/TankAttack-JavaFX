@@ -5,6 +5,7 @@
  */
 package tankattack;
 
+import javafx.animation.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -37,14 +38,29 @@ public class TankAttack extends Application {
         primaryStage.setTitle("TANK ATTACK");
         primaryStage.show();
                 
-        setupAndLaunchGameLoop();
+        setupAndLaunchGameLoopForCurrWorld(currWorld);
 
     }
     
-    private void setupAndLaunchGameLoop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setupAndLaunchGameLoopForCurrWorld(World world) {
+
+        KeyFrame frame = world.createKeyFrame(NUM_FRAMES_PER_SECOND);
+        
+        
+        
+        Timeline animation = new Timeline();
+        animation.setCycleCount(Animation.INDEFINITE);
+        animation.getKeyFrames().add(frame);
+        animation.play();
+    
     }
     
+    private void transitionFromFirstWorldToSecondWorld() {
+        
+        
+        
+    }
+
     private void initTankAttack(Stage stage) {
         
         currStage = stage;
