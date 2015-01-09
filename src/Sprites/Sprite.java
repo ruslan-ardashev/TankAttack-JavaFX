@@ -5,10 +5,14 @@
  */
 package Sprites;
 
+import javafx.scene.image.*;
+
 /**
  *
  * @author Ruslan
  */
-public abstract class Sprite {
+public abstract class Sprite extends ImageView {
+    
+    
     
 }
