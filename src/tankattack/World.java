@@ -5,7 +5,7 @@
  */
 package tankattack;
 
-import Sprites.Sprite;
+import Sprites.*;
 import java.util.*;
 import javafx.animation.*;
 import javafx.geometry.*;
