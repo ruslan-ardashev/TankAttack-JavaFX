@@ -5,7 +5,15 @@
  */
 package tankattack;
 
+import Sprites.*;
+import java.awt.image.*;
+import java.io.*;
+import java.util.logging.*;
+import javafx.scene.*;
+import javafx.scene.image.*;
 import javafx.stage.*;
+import javax.imageio.*;
+
 
 /**
  *
