@@ -8,7 +8,7 @@ package tankattack;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
+import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -19,26 +19,50 @@ import javafx.stage.Stage;
  */
 public class TankAttack extends Application {
     
+    public static final double gameWidth = 600;
+    public static final double gameHeight = 600;
+    
+    private static final int NUM_FRAMES_PER_SECOND = 60;
+    private Stage currStage;
+    private World currWorld;
+    private Scene currScene;
+    
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        initTankAttack(primaryStage);
         
-        Scene scene = new Scene(root, 300, 250);
+        displayCurrentScene();
         
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
+        primaryStage.setTitle("TANK ATTACK");
         primaryStage.show();
+                
+        setupAndLaunchGameLoop();
+
+    }
+    
+    private void setupAndLaunchGameLoop() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    private void initTankAttack(Stage stage) {
+        
+        currStage = stage;
+        currWorld = new FirstWorld(stage);
+        currScene = currWorld.createScene();
+        
+    }
+    
+    private void displayCurrentScene() {
+        
+        currStage.setScene(currScene);
+        
+    }
+    
+    public void tellStageToShowScene(Scene scene) {
+        
+        currStage.setScene(scene);
+        
     }
 
     /**
@@ -47,5 +71,9 @@ public class TankAttack extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }
+
+
+
+
