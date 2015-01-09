@@ -47,6 +47,8 @@ public abstract class World {
         
         sprites.add(s);
         
+        root.getChildren().add(s);
+        
     }
     
     public ArrayList<Sprite> getSprites() {
