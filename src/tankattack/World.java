@@ -32,6 +32,7 @@ public abstract class World {
     private Random myGenerator = new Random();
     
     private ArrayList<Sprite> sprites;
+    private Player playerSprite;
     
     private Timeline timeline;
     
