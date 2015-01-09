@@ -108,11 +108,9 @@ public abstract class World {
         
     }
 
-    private void createInitialSprites(Group root) {
-        
-//        throw new UnsupportedOperationException("Not supported yet."); 
-        
-    }
+    public abstract void createInitialSprites();
+    
+    public abstract Player createPlayerSprite();
 
     private void updateSprites() {
 
