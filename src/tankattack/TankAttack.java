@@ -45,14 +45,7 @@ public class TankAttack extends Application {
     
     public void setupAndLaunchGameLoopForCurrWorld(World world) {
 
-        KeyFrame frame = world.createKeyFrame(NUM_FRAMES_PER_SECOND);
-        
-        
-        
-        Timeline animation = new Timeline();
-        animation.setCycleCount(Animation.INDEFINITE);
-        animation.getKeyFrames().add(frame);
-        animation.play();
+        world.initAnimation();
     
     }
     
