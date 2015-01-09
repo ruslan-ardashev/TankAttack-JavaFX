@@ -54,6 +54,17 @@ public abstract class World {
         
     }
     
+    public void setPlayerSprite(Player player) {
+        
+        playerSprite = player;
+        
+    }
+    
+    public Player getPlayerSprite() {
+        
+        return playerSprite;
+        
+    }
     
     // Real Methods
     
