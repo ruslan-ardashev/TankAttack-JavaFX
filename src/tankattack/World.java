@@ -5,7 +5,9 @@
  */
 package tankattack;
 
+import Sprites.Sprite;
 import java.util.*;
+import javafx.animation.*;
 import javafx.geometry.*;
 import javafx.scene.*;
 import javafx.scene.image.*;
@@ -29,6 +31,8 @@ public abstract class World {
     private Random myGenerator = new Random();
     
     private ArrayList<Sprite> sprites;
+    
+    private Timeline timeline;
     
     // Setters, Getters
     public void addSprite(Sprite s) {
@@ -63,7 +67,7 @@ public abstract class World {
         
     }
     
-    Scene createScene() {
+    public Scene createScene() {
         
         root = new Group();
         createInitialSprites(root);
@@ -72,18 +76,26 @@ public abstract class World {
         return scene;
         
     }
+    
+    public KeyFrame createKeyFrame(int NUM_FRAMES_PER_SECOND) {
+        
+        throw new UnsupportedOperationException("Not supported yet.");
+        
+    }
+    
+    public void initAnimation() {
+        
+        
+        
+    }
 
     private void createInitialSprites(Group root) {
         
         throw new UnsupportedOperationException("Not supported yet."); 
         
     }
+
     
-    
-    
-    
-    
-    
-    
+
     
 }
