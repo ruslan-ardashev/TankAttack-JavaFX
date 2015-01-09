@@ -85,7 +85,7 @@ public abstract class World {
     public Scene createScene() {
         
         root = new Group();
-        createInitialSprites(root);
+        createInitialSprites();
         
         scene = new Scene(root, TankAttack.gameWidth, TankAttack.gameHeight, Color.CORNFLOWERBLUE);
         return scene;
