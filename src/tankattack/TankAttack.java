@@ -23,7 +23,8 @@ public class TankAttack extends Application {
     public static final double gameWidth = 600;
     public static final double gameHeight = 600;
     
-    private static final int NUM_FRAMES_PER_SECOND = 60;
+    public static final int NUM_FRAMES_PER_SECOND = 60;
+    
     private Stage currStage;
     private World currWorld;
     private Scene currScene;
