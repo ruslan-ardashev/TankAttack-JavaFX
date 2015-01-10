@@ -29,6 +29,9 @@ public class TankAttack extends Application {
     
     public static final int NUM_FRAMES_PER_SECOND = 60;
     
+    public static double buttonWidth = gameWidth / 5;
+    public static double buttonHeight = gameWidth / 10;
+    
     private Stage currStage;
     private World currWorld;
     private Scene currScene;
