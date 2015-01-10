@@ -33,6 +33,7 @@ public class FirstWorld extends World {
         createPlayerSprite();
         // Other sprites
         
+        
     }
 
     @Override
