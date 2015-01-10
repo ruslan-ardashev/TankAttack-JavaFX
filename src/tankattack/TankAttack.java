@@ -171,7 +171,6 @@ public class TankAttack extends Application {
 
     private void initTankAttack(Stage stage) {
         
-        currStage = stage;
         currWorld = new FirstWorld(stage);
         currScene = currWorld.createScene();
         
