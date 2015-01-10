@@ -140,6 +140,21 @@ public class TankAttack extends Application {
         root.getChildren().add(v);
         
     }
+    
+    private Button createButton(String text) {
+        
+        Button returnButton = new Button();
+        
+        if (!text.isEmpty()) {
+            
+            returnButton.setText(text);
+            
+        }
+        
+        returnButton.setMinSize(buttonWidth, buttonHeight);
+        
+        return returnButton;
+        
     }
     
     public void setupAndLaunchGameLoopForCurrWorld(World world) {
