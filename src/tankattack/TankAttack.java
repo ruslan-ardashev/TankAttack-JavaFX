@@ -39,7 +39,10 @@ public class TankAttack extends Application {
     @Override
     public void start(Stage primaryStage) {
         
-        initTankAttack(primaryStage);
+        currStage = primaryStage;
+        displayStartMenu(primaryStage);
+
+    }
         
         displayCurrentScene();
         
