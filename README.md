@@ -1,9 +1,6 @@
 # *TankAttack* #
 
-====
-
 *Please see Design/DESIGN.pdf for the implementation plan!*
-
 
 ####First project for CompSci 308 Spring 2015####
 
@@ -34,7 +31,7 @@ Extra features: N/A (yet)
 Impressions/Suggestions:
 
 
-*The Image*
+*The Idea*
 
 ![](https://github.com/duke-compsci308-spring2015/game_ra86/blob/master/Design/plan.png)
 
