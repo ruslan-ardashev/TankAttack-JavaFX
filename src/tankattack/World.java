@@ -29,7 +29,6 @@ public abstract class World {
     
     private Scene scene;
     private Group root;
-    private Sprite myPlayer;
     private Circle myEnemy;
     private Point2D myEnemyVelocity;
     private Random myGenerator = new Random();
@@ -143,18 +142,18 @@ public abstract class World {
         
         // Obtained from Prof. Duvall's example
         KeyCode keyCode = e.getCode();
-        
+                
         if (keyCode == KeyCode.RIGHT) {
-            myPlayer.setTranslateX(myPlayer.getTranslateX() + TankAttack.PLAYER_SPEED);
+            playerSprite.setTranslateX(playerSprite.getTranslateX() + TankAttack.PLAYER_SPEED);
         }
         else if (keyCode == KeyCode.LEFT) {
-            myPlayer.setTranslateX(myPlayer.getTranslateX() - TankAttack.PLAYER_SPEED);
+            playerSprite.setTranslateX(playerSprite.getTranslateX() - TankAttack.PLAYER_SPEED);
         }
         else if (keyCode == KeyCode.UP) {
-            myPlayer.setTranslateY(myPlayer.getTranslateY() - TankAttack.PLAYER_SPEED);
+            playerSprite.setTranslateY(playerSprite.getTranslateY() - TankAttack.PLAYER_SPEED);
         }
         else if (keyCode == KeyCode.DOWN) {
-            myPlayer.setTranslateY(myPlayer.getTranslateY() + TankAttack.PLAYER_SPEED);
+            playerSprite.setTranslateY(playerSprite.getTranslateY() + TankAttack.PLAYER_SPEED);
         }
         
     }
