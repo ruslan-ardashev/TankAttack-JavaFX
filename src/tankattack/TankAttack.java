@@ -116,7 +116,7 @@ public class TankAttack extends Application {
 
                 stage.setTitle("TANK ATTACK");
 
-                setupAndLaunchGameLoopForCurrWorld(currWorld);
+                setupAndLaunchGameLoopForCurrWorld();
                 
             }
             
@@ -157,9 +157,9 @@ public class TankAttack extends Application {
         
     }
     
-    public void setupAndLaunchGameLoopForCurrWorld(World world) {
+    public void setupAndLaunchGameLoopForCurrWorld() {
 
-        world.initAnimation();
+        currWorld.initAnimation();
     
     }
     
