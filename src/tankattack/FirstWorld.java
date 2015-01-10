@@ -30,22 +30,15 @@ public class FirstWorld extends World {
     @Override
     public void createInitialSprites() {
         
-        Player player = createPlayerSprite();
-        setPlayerSprite(player);
-        addSprite(player);
+        createPlayerSprite();
+        // Other sprites
         
     }
 
     @Override
-    public Player createPlayerSprite() {
-                
-        Player returnPlayer = new Player();
-        
-        returnPlayer.setImage(new Image(getClass().getResourceAsStream("testTank.png")));
-        returnPlayer.setTranslateX(TankAttack.gameWidth/2);
-        returnPlayer.setTranslateY(TankAttack.gameHeight/2);
-        
-        return returnPlayer;
+    public void signalEndOfLevel() {
+
+        TankAttack.sharedInstance.transitionFromFirstWorldToSecondWorld();
     
     }
     
