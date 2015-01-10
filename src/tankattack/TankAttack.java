@@ -96,14 +96,50 @@ public class TankAttack extends Application {
         root.getChildren().add(circles);
         
     }
+    
+    private void createButtonsForDisplayMenu(Stage stage, Group root) {
         
-        displayCurrentScene();
+        VBox v = new VBox(TankAttack.gameHeight/20);
+        v.setTranslateY(TankAttack.gameHeight / 2);
         
-        primaryStage.setTitle("TANK ATTACK");
-        primaryStage.show();
-                
-        setupAndLaunchGameLoopForCurrWorld(currWorld);
+        v.setTranslateX(TankAttack.gameWidth/2 - TankAttack.buttonWidth/2);
+        
+        Button start = this.createButton("START");
+        
+        start.setOnAction(new EventHandler<ActionEvent>() {
 
+            public void handle(ActionEvent event) {
+                
+                initTankAttack(stage);
+
+                displayCurrentScene();
+
+                stage.setTitle("TANK ATTACK");
+
+                setupAndLaunchGameLoopForCurrWorld(currWorld);
+                
+            }
+            
+        });
+        
+        Button quit = this.createButton("QUIT");
+        
+        quit.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event) {
+                
+                System.out.println("Quit button pressed.");
+                Platform.exit();
+                
+            }
+            
+        });
+                
+        v.getChildren().addAll(start, quit);
+        
+        root.getChildren().add(v);
+        
+    }
     }
     
     public void setupAndLaunchGameLoopForCurrWorld(World world) {
