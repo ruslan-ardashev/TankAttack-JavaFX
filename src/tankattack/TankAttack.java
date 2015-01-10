@@ -6,13 +6,17 @@
 package tankattack;
 
 import javafx.animation.*;
-import javafx.application.Application;
+import javafx.application.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.*;
 import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.effect.*;
+import javafx.scene.layout.*;
+import javafx.scene.paint.*;
+import javafx.scene.shape.*;
 import javafx.stage.Stage;
+import javafx.util.*;
 
 /**
  *
