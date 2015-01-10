@@ -1,31 +1,41 @@
-game
+# *TankAttack* #
+
 ====
 
-First project for CompSci 308 Spring 2015
+*Please see Design/DESIGN.pdf for the implementation plan!*
 
-Name: 
 
-Date started:
+####First project for CompSci 308 Spring 2015####
 
-Date finished:
+Name: Ruslan Ardashev ('15)
 
-Hours worked:
+Date started: 01/09/15
 
-Resources used:
+Date finished: N/A
 
-Main class file:
+Hours worked: 3hrs
 
-Data (non Java) files needed:
+Resources used: Google, Prof. Duvall's JavaFX Demo, Java API Documentation, Google
 
-How to play the game:
+Main class file: TankAttack
 
-Keys/Mouse input:
+Data (non Java) files needed: A comprehensive list is not available (yet).
 
-Cheat Keys:
+How to play the game: UP,DOWN,LEFT,RIGHT to navigate. SPACE to shoot.
 
-Known bugs:
+Keys/Mouse input: Keys
 
-Extra features:
+Cheat Keys: Not implemented yet (see Design/DESIGN.pdf for plan)
+
+Known bugs: N/A
+
+Extra features: N/A (yet)
 
 Impressions/Suggestions:
+
+
+*The Image*
+
+![](https://github.com/duke-compsci308-spring2015/game_ra86/blob/master/Design/plan.png)
+
 
