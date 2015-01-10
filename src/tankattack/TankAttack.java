@@ -43,6 +43,23 @@ public class TankAttack extends Application {
         displayStartMenu(primaryStage);
 
     }
+    
+    private void displayStartMenu(Stage stage) {
+        
+        stage.setTitle("Main Menu");
+        Group menuRoot = new Group();
+        final Scene mainMenu = new Scene(menuRoot, TankAttack.gameWidth, TankAttack.gameHeight);
+        
+        // Launch Background Animation
+        launchAnimationForDisplayMenu(stage, menuRoot);
+        
+        // Create Buttons
+        createButtonsForDisplayMenu(stage, menuRoot);
+        
+        stage.setScene(mainMenu);
+        stage.show();
+        
+    }
         
         displayCurrentScene();
         
