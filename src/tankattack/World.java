@@ -11,6 +11,7 @@ import javafx.animation.*;
 import javafx.geometry.*;
 import javafx.scene.*;
 import javafx.scene.image.*;
+import javafx.scene.input.*;
 import javafx.scene.paint.*;
 import javafx.scene.shape.*;
 import javafx.stage.*;
@@ -22,11 +23,13 @@ import javafx.util.*;
  */
 public abstract class World {
     
+    public static boolean isListeningForInput = true;
+    
     private Stage myStage;
     
     private Scene scene;
     private Group root;
-    private ImageView myPlayer;
+    private Sprite myPlayer;
     private Circle myEnemy;
     private Point2D myEnemyVelocity;
     private Random myGenerator = new Random();
@@ -88,6 +91,7 @@ public abstract class World {
         createInitialSprites();
         
         scene = new Scene(root, TankAttack.gameWidth, TankAttack.gameHeight, Color.CORNFLOWERBLUE);
+        scene.setOnKeyPressed(e -> handleKeyInput(e));
         return scene;
         
     }
@@ -110,15 +114,51 @@ public abstract class World {
 
     public abstract void createInitialSprites();
     
-    public abstract Player createPlayerSprite();
+    public void createPlayerSprite() {
+                
+        Player player = new Player();
+        
+        player.setImage(new Image(getClass().getResourceAsStream("testTank.png")));
+        player.setTranslateX(TankAttack.gameWidth/2);
+        player.setTranslateY(TankAttack.gameHeight/2);
+        
+        
+        
+        setPlayerSprite(player);
+        addSprite(player);
+    
+    }
 
     private void updateSprites() {
 
-        System.out.println("All is well. Printing animation 60 times a second.");
+//        System.out.println("All is well. Printing animation 60 times a second.");
+        
+        
+        
+    }
+
+    public abstract void signalEndOfLevel();
+
+    private void handleKeyInput(KeyEvent e) {
+        
+        // Obtained from Prof. Duvall's example
+        KeyCode keyCode = e.getCode();
+        
+        if (keyCode == KeyCode.RIGHT) {
+            myPlayer.setTranslateX(myPlayer.getTranslateX() + TankAttack.PLAYER_SPEED);
+        }
+        else if (keyCode == KeyCode.LEFT) {
+            myPlayer.setTranslateX(myPlayer.getTranslateX() - TankAttack.PLAYER_SPEED);
+        }
+        else if (keyCode == KeyCode.UP) {
+            myPlayer.setTranslateY(myPlayer.getTranslateY() - TankAttack.PLAYER_SPEED);
+        }
+        else if (keyCode == KeyCode.DOWN) {
+            myPlayer.setTranslateY(myPlayer.getTranslateY() + TankAttack.PLAYER_SPEED);
+        }
         
     }
 
     
-
     
 }

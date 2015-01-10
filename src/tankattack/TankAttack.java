@@ -32,6 +32,9 @@ public class TankAttack extends Application {
     public static double buttonWidth = gameWidth / 5;
     public static double buttonHeight = gameWidth / 10;
     
+    public static double PLAYER_SPEED = 4;
+    
+    public static TankAttack sharedInstance;
     private Stage currStage;
     private World currWorld;
     private Scene currScene;
@@ -39,6 +42,7 @@ public class TankAttack extends Application {
     @Override
     public void start(Stage primaryStage) {
         
+        sharedInstance = this;
         currStage = primaryStage;
         displayStartMenu(primaryStage);
 
@@ -163,8 +167,12 @@ public class TankAttack extends Application {
     
     }
     
-    private void transitionFromFirstWorldToSecondWorld() {
+    public void transitionFromFirstWorldToSecondWorld() {
         
+        // Init World 2
+        currWorld = new SecondWorld(currStage);
+        
+        // Display World 2
         
         
     }
