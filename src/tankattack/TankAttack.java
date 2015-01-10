@@ -60,6 +60,42 @@ public class TankAttack extends Application {
         stage.show();
         
     }
+    
+    private void launchAnimationForDisplayMenu(Stage stage, Group root) {
+        
+        // Most of this method was obtained from stackoverflow.com
+        
+        Group circles = new Group();
+
+        for(int cont = 0 ; cont < 30 ; cont++) {  
+            
+            Circle circle = new Circle();  
+            circle.setFill(Color.BLUE);  
+            circle.setEffect(new GaussianBlur(Math.random() * 8 + 2));  
+            circle.setOpacity(Math.random());  
+            circle.setRadius(Math.random()*30);  
+            circle.setCenterX(TankAttack.gameWidth * Math.random());
+            circle.setCenterY(TankAttack.gameHeight * Math.random());
+             
+            circles.getChildren().add(circle);  
+             
+            double randScale = (Math.random() * 4) + 1;  
+             
+            KeyValue kValueX = new KeyValue(circle.scaleXProperty() , randScale);  
+            KeyValue kValueY = new KeyValue(circle.scaleYProperty() , randScale);  
+            KeyFrame kFrame = new KeyFrame(Duration.millis(5000 + (Math.random() * 5000)) , kValueX , kValueY);  
+             
+            Timeline timeL = new Timeline();  
+            timeL.getKeyFrames().add(kFrame);  
+            timeL.setAutoReverse(true);  
+            timeL.setCycleCount(Animation.INDEFINITE);  
+            timeL.play();  
+            
+        }  
+        
+        root.getChildren().add(circles);
+        
+    }
         
         displayCurrentScene();
         
