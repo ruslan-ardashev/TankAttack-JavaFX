@@ -13,11 +13,14 @@ import javafx.scene.image.*;
  */
 public abstract class Sprite extends ImageView {
     
+    public static String imageName;
+    
     private double width;
     private double height;
     
     public double health = 100;
     public HealthBar healthBar;
+       
     
     
     public double height() {
