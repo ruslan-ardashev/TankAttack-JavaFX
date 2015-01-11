@@ -45,6 +45,7 @@ public class SecondWorld extends World {
         
         this.setScene(new Scene(this.getGroup(), TankAttack.gameWidth, TankAttack.gameHeight, Color.PURPLE));
         this.getScene().setOnKeyPressed(e -> handleKeyInput(e));
+        this.getScene().setOnKeyReleased(e -> handleKeyRelease(e));
         return this.getScene();
         
     }
