@@ -14,7 +14,7 @@ import tankattack.*;
  */
 public abstract class Sprite extends ImageView {
     
-    private World world;
+    public World world;
     
     public static String imageName;
     
