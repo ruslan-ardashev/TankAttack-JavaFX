@@ -6,9 +6,14 @@
             <file>file:/Users/Ruslan/Dropbox/Developer/NetbeansWorkspace/TankAttack/src/tankattack/DirController.java</file>
             <file>file:/Users/Ruslan/Dropbox/Developer/NetbeansWorkspace/TankAttack/src/tankattack/TankAttack.java</file>
             <file>file:/Users/Ruslan/Dropbox/Developer/NetbeansWorkspace/TankAttack/src/Sprites/Sprite.java</file>
+            <file>file:/Users/Ruslan/Dropbox/Developer/NetbeansWorkspace/TankAttack/src/Sprites/HealthBar.java</file>
+            <file>file:/Users/Ruslan/Dropbox/Developer/NetbeansWorkspace/TankAttack/src/Sprites/Boss.java</file>
             <file>file:/Users/Ruslan/Dropbox/Developer/NetbeansWorkspace/TankAttack/src/tankattack/FirstWorld.java</file>
+            <file>file:/Users/Ruslan/Dropbox/Developer/NetbeansWorkspace/TankAttack/src/Sprites/Enemy.java</file>
             <file>file:/Users/Ruslan/Dropbox/Developer/NetbeansWorkspace/TankAttack/src/tankattack/World.java</file>
             <file>file:/Users/Ruslan/Dropbox/Developer/NetbeansWorkspace/TankAttack/src/tankattack/SecondWorld.java</file>
+            <file>file:/Users/Ruslan/Dropbox/Developer/NetbeansWorkspace/TankAttack/src/Sprites/Player.java</file>
+            <file>file:/Users/Ruslan/Dropbox/Developer/NetbeansWorkspace/TankAttack/src/Sprites/Minion.java</file>
         </group>
     </open-files>
 </project-private>
