@@ -77,8 +77,33 @@ public abstract class World {
         
     }
     
-    // Real Methods
+    public Group getGroup() {
+        
+        return this.root;
+        
+    }
     
+    public void setGroup(Group root) {
+        
+        this.root = root;
+        
+    }
+    
+    public Scene getScene() {
+        
+        return this.scene;
+        
+    }
+    
+    public void setScene(Scene scene) {
+        
+        this.scene = scene;
+        
+    }
+    
+    // Real Methods
+        // Constructors
+        // Create Scene, Then Init Animation. Rest of methods are helpers.
     
     public World() {
         throw new UnsupportedOperationException("need to pass in a stage"); 
