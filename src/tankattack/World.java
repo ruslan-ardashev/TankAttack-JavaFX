@@ -234,29 +234,47 @@ public abstract class World {
     
     public void handleKeyInput(KeyEvent e) {
         
-        KeyCode keyCode = e.getCode();
+        modifyDirControllerState(e, true);
+        
+    }
+
+    public void handleKeyRelease(KeyEvent e) {
+
+        modifyDirControllerState(e, false);
+        
+    }
+    
+    private void modifyDirControllerState(KeyEvent key, boolean newState) {
+        
+        KeyCode keyCode = key.getCode();
                 
         if (keyCode == KeyCode.RIGHT) {
             
-            DirController.rightPressed = true;
+            DirController.rightPressed = newState;
             
         }
         
         else if (keyCode == KeyCode.LEFT) {
             
-            DirController.leftPressed = true;
+            DirController.leftPressed = newState;
             
         }
         
         else if (keyCode == KeyCode.UP) {
             
-            DirController.upPressed = true;
+            DirController.upPressed = newState;
             
         }
         
         else if (keyCode == KeyCode.DOWN) {
             
-            DirController.downPressed = true;
+            DirController.downPressed = newState;
+            
+        }
+        
+        else if (keyCode == KeyCode.SPACE) {
+            
+            DirController.spacePressed = newState;
             
         }
         
@@ -264,31 +282,27 @@ public abstract class World {
         
     }
 
-    public void handleKeyRelease(KeyEvent e) {
+    private void checkForWin() {
         
-        KeyCode keyCode = e.getCode();
-        
-        if (keyCode == KeyCode.RIGHT) {
+        // Temporary end to game
+        if (playerSprite.getTranslateX() < 10) {
             
-            DirController.rightPressed = false;
+            System.out.println("updateSprites calling finish.");
+            endOfLevel();
+            
+            // TODO Implement this.
+            // Player is left all alone. Stop animation. Level defeated.
+            
             
         }
         
-        else if (keyCode == KeyCode.LEFT) {
+    }
+
             
-            DirController.leftPressed = false;
+            // Implement.
+            System.out.println("PEW PEW"); 
             
-        }
-        
-        else if (keyCode == KeyCode.UP) {
             
-            DirController.upPressed = false;
-            
-        }
-        
-        else if (keyCode == KeyCode.DOWN) {
-            
-            DirController.downPressed = false;
             
         }
         
