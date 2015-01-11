@@ -5,17 +5,23 @@
  */
 package Sprites;
 
+import tankattack.*;
+
 /**
  *
  * @author Ruslan
  */
 public class Boss extends Enemy {
 
-    public static String imageName = "bossTank.png";
+    public static String imageName = "boss.png";
     
-    public Boss(double x, double y) {
+    public Boss(double x, double y, World world) {
         
-        super(Boss.imageName, x, y);
+        super(Boss.imageName, x, y, world);
+        this.health = 300.0;
+        
+        this.healthBar = null;
+        System.out.println("TODO: boss healthbar");
         
     }
 

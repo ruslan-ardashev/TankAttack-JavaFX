@@ -5,6 +5,8 @@
  */
 package Sprites;
 
+import tankattack.*;
+
 /**
  *
  * @author Ruslan
@@ -13,9 +15,9 @@ public class Bullet extends Sprite {
 
     public static String imageName = "bullet.png";
     
-    public Bullet(double x, double y) {
+    public Bullet(double x, double y, World world) {
         
-        super(Bullet.imageName, x, y);
+        super(Bullet.imageName, x, y, world);
         
     }
     

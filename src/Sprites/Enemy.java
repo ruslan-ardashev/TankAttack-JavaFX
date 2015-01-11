@@ -5,14 +5,19 @@
  */
 package Sprites;
 
+import tankattack.*;
+
 /**
  *
  * @author Ruslan
  */
 public abstract class Enemy extends Sprite {
-
-    public Enemy(String image, double x, double y) {
-        super(image, x, y);
+    
+    public Enemy(String image, double x, double y, World world) {
+        
+        super(image, x, y, world);
+        
+                
     }
     
     public abstract void updateEnemyXY();

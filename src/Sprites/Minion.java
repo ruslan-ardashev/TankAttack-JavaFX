@@ -5,17 +5,22 @@
  */
 package Sprites;
 
+import tankattack.*;
+
 /**
  *
  * @author Ruslan
  */
 public class Minion extends Enemy {
 
-    public static String imageName = "minionTank.png";
+    public static String imageName = "minion.png";
 
-    public Minion(double x, double y) {
+    public Minion(double x, double y, World world) {
         
-        super(Minion.imageName, x, y);
+        super(Minion.imageName, x, y, world);
+        this.health = 100.0;
+        this.healthBar = null;
+        System.out.println("in minion constructor, need to create HealthBar");
         
     }
     
