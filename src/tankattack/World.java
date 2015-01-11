@@ -37,12 +37,7 @@ public abstract class World {
     private Player playerSprite;
         
     private Timeline timeline;
-    
-    // Performance-Improving Variables
-    // created to not create objects @ 60Hz
-    private double[] playerLocation;   
-    private double[] newXY;
-    
+
     
     // Setters, Getters
     public void addSprite(Sprite s) {
@@ -170,7 +165,7 @@ public abstract class World {
         
         ////// IMPLEMENT ////////////////////////////
         // Other Updates
-//        updateEnemySprites();
+        updateEnemySprites();
         
         // Handle Firing
         handleFiring();
@@ -276,12 +271,32 @@ public abstract class World {
 
     private void updateEnemySprites() {
 
-        // "sprites" arraylist<Sprite>
+        Enemy enemy;
         
+        for (Sprite s : sprites) {
+            
+            if (s instanceof Enemy) {
+                
+                enemy = (Enemy)s;
+                
+                // Movement
+                enemy.updateEnemyXY();
+                
+                // Firing
+                if (enemy.isFiring()) {
+                    
+                    handleEnemyFiring(enemy);
+                    
+                }
+                
+            }
+            
+        }
         
     
     }
 
+    // Player firing, NOT enemy firing.
     private void handleFiring() {
 
         // Check if space bar pressed, create new bullets for Player
@@ -301,6 +316,12 @@ public abstract class World {
         
         
         
+    }
+
+    private void handleEnemyFiring(Enemy enemy) {
+
+        System.out.println("TODO: implement enemy firing inside World [handleEnemyFiring]");
+    
     }
 
 
