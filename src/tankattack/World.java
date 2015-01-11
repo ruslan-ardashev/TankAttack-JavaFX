@@ -298,6 +298,22 @@ public abstract class World {
         
     }
 
+    private void handleCollision() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void updateEnemySprites() {
+
+        // "sprites" arraylist<Sprite>
+        
+        
+    
+    }
+
+    private void handleFiring() {
+
+        // Check if space bar pressed, create new bullets for Player
+        if (DirController.spacePressed) {
             
             // Implement.
             System.out.println("PEW PEW"); 
@@ -305,6 +321,13 @@ public abstract class World {
             
             
         }
+        
+        // Update existing bullets that are moving
+        
+        
+        // Handle enemy firing
+        
+        
         
     }
 
