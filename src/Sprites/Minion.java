@@ -34,12 +34,30 @@ public class Minion extends Enemy {
     
     @Override
     public void updateEnemyXY() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        if (goingRight) {
+            
+            // Update x ++
+            
+            
+        }
+        
+        else {
+            
+            // Update x --
+            
+            
+        }
+        
     }
 
     @Override
     public boolean isFiring() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        // TODO
+        
+        return false;
+        
     }
     
     
