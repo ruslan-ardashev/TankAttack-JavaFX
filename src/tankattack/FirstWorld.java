@@ -32,7 +32,7 @@ public class FirstWorld extends World {
         
         createPlayerSprite();
         // Other sprites
-        
+        createEnemies();
         
         
     }
@@ -42,6 +42,23 @@ public class FirstWorld extends World {
 
         TankAttack.sharedInstance.transitionFromFirstWorldToSecondWorld();
     
+    }
+
+    private void createEnemies() {
+
+        // Enemy 1
+        Minion one = new Minion(50, 40.0, this);
+        
+        
+        // Enemy 2
+        Minion two = new Minion(245.0, 80.0, this);
+        
+        
+        // Enemy 3
+        Minion three = new Minion(540.0, 60.0, this);
+        
+        
+        
     }
     
     
