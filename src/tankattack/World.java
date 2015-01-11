@@ -41,7 +41,7 @@ public abstract class World {
     // Performance-Improving Variables
     // created to not create objects @ 60Hz
     private double[] playerLocation;   
-    
+    private double[] newXY;
     
     
     // Setters, Getters
@@ -161,12 +161,10 @@ public abstract class World {
         // Update Player
         updatePlayerLocation();
 
-        
         // Other Updates
         
         
         // Temporary end to game
-        
         if (playerSprite.getTranslateX() < 10) {
             
             System.out.println("updateSprites calling finish.");
@@ -194,8 +192,13 @@ public abstract class World {
         double playerWidth  = playerSprite.width();
         double playerHeight = playerSprite.height();
 
+        if (newXY == null) {
+            
+            newXY = new double[2];
+            
+        }
         
-        double[] newXY = DirController.getNewXY(playerLocation, playerWidth, playerHeight, TankAttack.PLAYER_SPEED);
+        newXY = DirController.getNewXY(playerLocation, playerWidth, playerHeight, TankAttack.PLAYER_SPEED);
         
         playerSprite.setTranslateX(newXY[0]);
         playerSprite.setTranslateY(newXY[1]);    
