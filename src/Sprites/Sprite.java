@@ -13,6 +13,32 @@ import javafx.scene.image.*;
  */
 public abstract class Sprite extends ImageView {
     
+    private double width;
+    private double height;
     
+    
+    public double height() {
+        
+        return this.height;
+        
+    }
+    
+    public double width() {
+        
+        return this.width;
+        
+    }
+    
+    public void setHeight(double height) {
+        
+        this.height = height;
+        
+    }
+    
+    public void setWidth(double width) {
+        
+        this.width = width;
+        
+    }
     
 }

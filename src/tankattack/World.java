@@ -148,13 +148,7 @@ public abstract class World {
     public void createPlayerSprite() {
                 
         Player player = new Player();
-        
-        player.setImage(new Image(getClass().getResourceAsStream("testTank.png")));
-        player.setTranslateX(TankAttack.gameWidth/2);
-        player.setTranslateY(TankAttack.gameHeight/2);
-        
-        System.out.println("width: " + player.getImage().getWidth());
-        
+                
         setPlayerSprite(player);
         addSprite(player);
     
@@ -197,8 +191,9 @@ public abstract class World {
         playerLocation[0] = playerSprite.getTranslateX();
         playerLocation[1] = playerSprite.getTranslateY();            
                 
-        double playerWidth  = playerSprite.getImage().getWidth();
-        double playerHeight = playerSprite.getImage().getHeight();
+        double playerWidth  = playerSprite.width();
+        double playerHeight = playerSprite.height();
+
         
         double[] newXY = DirController.getNewXY(playerLocation, playerWidth, playerHeight, TankAttack.PLAYER_SPEED);
         
