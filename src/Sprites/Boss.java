@@ -9,9 +9,13 @@ package Sprites;
  *
  * @author Ruslan
  */
-public abstract class Enemy extends Sprite {
+public class Boss extends Enemy {
+
+    @Override
+    public void updateEnemyXY() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+ 
     
-    public abstract void updateEnemyXY();
-    public abstract void didEnemyFire();
     
 }
