@@ -18,12 +18,17 @@ public class Minion extends Enemy {
     private double leftXLimit, rightXLimit;
     private boolean goingRight;
 
-    public Minion(double x, double y, World world) {
+    public Minion(double x, double y, World world, double leftXLimit, double rightXLimit, boolean goingRight) {
         
         super(Minion.imageName, x, y, world);
         this.health = 100.0;
         this.healthBar = null;
         System.out.println("in minion constructor, need to create HealthBar");
+        
+        this.leftXLimit = leftXLimit;
+        this.rightXLimit = rightXLimit;
+        
+        this.goingRight = goingRight;
         
     }
     
