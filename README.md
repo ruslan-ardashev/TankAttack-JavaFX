@@ -10,7 +10,7 @@ Date started: 01/09/15
 
 Date finished: N/A
 
-Hours worked: 3hrs
+Hours worked: 6hrs
 
 Resources used: Google, Prof. Duvall's JavaFX Demo, Java API Documentation, Google
 
