@@ -6,6 +6,8 @@
 package tankattack;
 
 import Sprites.*;
+import javafx.scene.*;
+import javafx.scene.paint.*;
 import javafx.stage.*;
 
 /**
