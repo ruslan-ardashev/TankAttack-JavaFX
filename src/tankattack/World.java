@@ -153,7 +153,7 @@ public abstract class World {
     
     public void createPlayerSprite() {
                 
-        Player player = new Player();
+        Player player = new Player(TankAttack.gameWidth/2 , TankAttack.gameHeight / 2);
                 
         setPlayerSprite(player);
         addSprite(player);
