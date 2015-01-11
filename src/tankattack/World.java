@@ -164,23 +164,24 @@ public abstract class World {
 
 //        System.out.println("All is well. Printing animation 60 times a second.");
         
-        // Update Player
+        ////// DONE ////////////////////////////
         updatePlayerLocation();
 
+        ////// DONE ////////////////////////////
+        
+        ////// IMPLEMENT ////////////////////////////
         // Other Updates
+//        updateEnemySprites();
         
+        // Handle Firing
+        handleFiring();
         
-        // Temporary end to game
-        if (playerSprite.getTranslateX() < 10) {
-            
-            System.out.println("updateSprites calling finish.");
-            endOfLevel();
-            
-            // TODO Implement this.
-            // Player is left all alone. Stop animation. Level defeated.
-            
-            
-        }
+        // Register Collisions / Hits
+//        handleCollision();
+        
+        // Check for win
+        checkForWin();
+        ////// IMPLEMENT ////////////////////////////
         
     }
     
