@@ -6,12 +6,15 @@
 package Sprites;
 
 import javafx.scene.image.*;
+import tankattack.*;
 
 /**
  *
  * @author Ruslan
  */
 public abstract class Sprite extends ImageView {
+    
+    private World world;
     
     public static String imageName;
     
@@ -22,7 +25,9 @@ public abstract class Sprite extends ImageView {
     public HealthBar healthBar;
        
     
-    public Sprite(String image, double x, double y) {
+    public Sprite(String image, double x, double y, World world) {
+        
+        this.world = world;
         
         if (image == null) {
             System.out.println("Forgot to pass image into sprite being created!");
@@ -35,6 +40,18 @@ public abstract class Sprite extends ImageView {
         
         this.setTranslateX( x -  width/2 );
         this.setTranslateY( y - height/2 );
+        
+        if (world == null) {
+            
+            System.out.println("FORGOT TO SET WORLD, [new Sprite()]");
+            
+        }
+        
+        else {
+            
+            world.addSprite(this);
+            
+        }
         
     }
     
