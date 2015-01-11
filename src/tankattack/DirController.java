@@ -15,6 +15,7 @@ public class DirController {
     
     // Improvements in speed. No new objects @ 60Hz
     public static double[] returnArray;
+    public static boolean haventAlreadyRemindedMyself = true;
     
 
     public static double[] getNewXY(double[] currPosition, double itemWidth, double itemHeight, double multiplier) {
@@ -27,6 +28,15 @@ public class DirController {
             
         }
         
+        // In the interest of later improving performance.
+        if (haventAlreadyRemindedMyself) {
+            
+            System.out.println("Ruslan you bozo don't make an array[2] 60 hz. in DirController [getNewXY]");
+            haventAlreadyRemindedMyself = false;
+            
+        }
+
+        // EW. GROSS. Also scan other files for double-creation and put that stuff inside instance variables instead.
         double[] returnArray = new double[2];
         
         if (!upPressed && !downPressed && !leftPressed && !rightPressed) {
@@ -129,7 +139,7 @@ public class DirController {
         returnArray[0] = returnArray[0] * multiplier;
         returnArray[1] = returnArray[1] * multiplier;
         
-        System.out.println("Before checkBounds, up change: "+returnArray[1] +", horiz change: "+returnArray[0]);
+//        System.out.println("Before checkBounds, up change: "+returnArray[1] +", horiz change: "+returnArray[0]);
         
         returnArray = DirController.checkBounds(returnArray, currPosition, itemWidth, itemHeight);
         
