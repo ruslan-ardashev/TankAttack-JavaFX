@@ -16,6 +16,12 @@ public class Player extends Sprite {
     
     public static String imageName = "testTank.png";
     
+        
+    // Performance-Improving Variables
+    // created to not create objects @ 60Hz
+    private double[] location; //x,y
+    private double[] newXY; //x,y
+    
     public Player(double x, double y, World world) {
         
         super(Player.imageName, x, y, world);
@@ -25,5 +31,32 @@ public class Player extends Sprite {
         System.out.println("null healthbar for now for player in constructor");
                 
     } 
+     
+    public void updateLocation() {
+                
+        if (location == null) {
+            
+            location = new double[2];
+            
+        }
+        
+        location[0] = this.getTranslateX();
+        location[1] = this.getTranslateY();            
+                
+        double playerWidth  = this.width();
+        double playerHeight = this.height();
+
+        if (newXY == null) {
+            
+            newXY = new double[2];
+            
+        }
+        
+        newXY = DirController.getNewXY(location, playerWidth, playerHeight, TankAttack.PLAYER_SPEED);
+        
+        this.setTranslateX(newXY[0]);
+        this.setTranslateY(newXY[1]);    
+    
+    }
     
 }

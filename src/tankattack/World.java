@@ -164,7 +164,7 @@ public abstract class World {
 //        System.out.println("All is well. Printing animation 60 times a second.");
         
         ////// DONE ////////////////////////////
-        updatePlayerLocation();
+        playerSprite.updateLocation();
 
         ////// DONE ////////////////////////////
         
@@ -182,33 +182,6 @@ public abstract class World {
         checkForWin();
         ////// IMPLEMENT ////////////////////////////
         
-    }
-    
-    private void updatePlayerLocation() {
-                
-        if (playerLocation == null) {
-            
-            playerLocation = new double[2];
-            
-        }
-        
-        playerLocation[0] = playerSprite.getTranslateX();
-        playerLocation[1] = playerSprite.getTranslateY();            
-                
-        double playerWidth  = playerSprite.width();
-        double playerHeight = playerSprite.height();
-
-        if (newXY == null) {
-            
-            newXY = new double[2];
-            
-        }
-        
-        newXY = DirController.getNewXY(playerLocation, playerWidth, playerHeight, TankAttack.PLAYER_SPEED);
-        
-        playerSprite.setTranslateX(newXY[0]);
-        playerSprite.setTranslateY(newXY[1]);    
-    
     }
 
     private void endOfLevel() {
