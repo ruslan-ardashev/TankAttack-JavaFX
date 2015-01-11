@@ -153,7 +153,7 @@ public abstract class World {
         player.setTranslateX(TankAttack.gameWidth/2);
         player.setTranslateY(TankAttack.gameHeight/2);
         
-        
+        System.out.println("width: " + player.getImage().getWidth());
         
         setPlayerSprite(player);
         addSprite(player);
