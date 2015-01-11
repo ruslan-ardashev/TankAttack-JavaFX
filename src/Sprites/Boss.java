@@ -27,12 +27,17 @@ public class Boss extends Enemy {
 
     @Override
     public void updateEnemyXY() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        // TODO
+    
     }
 
     @Override
     public boolean isFiring() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        // TODO
+        return false;
+    
     }
  
     

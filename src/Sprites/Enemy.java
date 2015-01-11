@@ -16,7 +16,6 @@ public abstract class Enemy extends Sprite {
     public Enemy(String image, double x, double y, World world) {
         
         super(image, x, y, world);
-        
                 
     }
     
