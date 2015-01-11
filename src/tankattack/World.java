@@ -35,8 +35,14 @@ public abstract class World {
     
     private ArrayList<Sprite> sprites;
     private Player playerSprite;
-    
+        
     private Timeline timeline;
+    
+    // Performance-Improving Variables
+    // created to not create objects @ 60Hz
+    private double[] playerLocation;   
+    
+    
     
     // Setters, Getters
     public void addSprite(Sprite s) {
