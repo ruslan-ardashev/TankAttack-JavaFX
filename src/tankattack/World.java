@@ -164,32 +164,136 @@ public abstract class World {
 
 //        System.out.println("All is well. Printing animation 60 times a second.");
         
+        // Update Player
+        updatePlayerLocation();
+
         
+        // Other Updates
+        
+        
+        // Temporary end to game
+        
+        if (playerSprite.getTranslateX() < 0) {
+            
+            System.out.println("updateSprites calling finish.");
+            endOfLevel();
+            
+            // TODO Implement this.
+            // Player is left all alone. Stop animation. Level defeated.
+            
+            
+        }
         
     }
-
-    public abstract void signalEndOfLevel();
-
-    private void handleKeyInput(KeyEvent e) {
+    
+    private void updatePlayerLocation() {
+                
+        if (playerLocation == null) {
+            
+            playerLocation = new double[2];
+            
+        }
         
-        // Obtained from Prof. Duvall's example
+        playerLocation[0] = playerSprite.getTranslateX();
+        playerLocation[1] = playerSprite.getTranslateY();            
+                
+        double playerWidth  = playerSprite.getImage().getWidth();
+        double playerHeight = playerSprite.getImage().getHeight();
+        
+        double[] newXY = DirController.getNewXY(playerLocation, playerWidth, playerHeight, TankAttack.PLAYER_SPEED);
+        
+        playerSprite.setTranslateX(newXY[0]);
+        playerSprite.setTranslateY(newXY[1]);    
+    
+    }
+
+    private void endOfLevel() {
+        
+        timeline.pause();
+        
+        // TODO: Display level complete.
+        showEndOfLevelText();
+        
+        // Tell TankAttack to put up the next world.
+        signalEndOfLevel();
+        
+    }
+    
+    private void showEndOfLevelText() {
+        
+        System.out.println("TODO: Animate text over this level's end saying END OF LEVEL.");
+        
+    }
+    
+    public abstract void signalEndOfLevel();
+    
+    public void handleKeyInput(KeyEvent e) {
+        
         KeyCode keyCode = e.getCode();
                 
         if (keyCode == KeyCode.RIGHT) {
-            playerSprite.setTranslateX(playerSprite.getTranslateX() + TankAttack.PLAYER_SPEED);
+            
+            DirController.rightPressed = true;
+            
         }
+        
         else if (keyCode == KeyCode.LEFT) {
-            playerSprite.setTranslateX(playerSprite.getTranslateX() - TankAttack.PLAYER_SPEED);
+            
+            DirController.leftPressed = true;
+            
         }
+        
         else if (keyCode == KeyCode.UP) {
-            playerSprite.setTranslateY(playerSprite.getTranslateY() - TankAttack.PLAYER_SPEED);
+            
+            DirController.upPressed = true;
+            
         }
+        
         else if (keyCode == KeyCode.DOWN) {
-            playerSprite.setTranslateY(playerSprite.getTranslateY() + TankAttack.PLAYER_SPEED);
+            
+            DirController.downPressed = true;
+            
+        }
+        
+        // TODO: Implement space bar to shoot, and cheat codes, here.
+        
+    }
+
+    private void handleKeyRelease(KeyEvent e) {
+        
+        KeyCode keyCode = e.getCode();
+        
+        if (keyCode == KeyCode.RIGHT) {
+            
+            DirController.rightPressed = false;
+            
+        }
+        
+        else if (keyCode == KeyCode.LEFT) {
+            
+            DirController.leftPressed = false;
+            
+        }
+        
+        else if (keyCode == KeyCode.UP) {
+            
+            DirController.upPressed = false;
+            
+        }
+        
+        else if (keyCode == KeyCode.DOWN) {
+            
+            DirController.downPressed = false;
+            
         }
         
     }
 
-    
-    
+
 }
+
+
+
+
+
+
