@@ -30,7 +30,7 @@ public class Player extends Sprite {
         this.healthBar = null;
         System.out.println("null healthbar for now for player in constructor");
                 
-    } 
+    }
      
     public void updateLocation() {
                 
