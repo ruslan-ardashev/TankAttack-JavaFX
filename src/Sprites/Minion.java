@@ -34,18 +34,44 @@ public class Minion extends Enemy {
     
     @Override
     public void updateEnemyXY() {
-
+        
         if (goingRight) {
             
+            double rightDestination = this.getTranslateX() + this.width() + TankAttack.MINION_SPEED;
+            
+            if (rightDestination >= rightXLimit) {
+                
+                goingRight = false;
+                goLeft();
+                
+            }
             // Update x ++
             
+            else {
+                
+                goRight();
+                
+            }
             
         }
         
         else {
             
             // Update x --
+            double leftDestination = this.getTranslateX() - TankAttack.MINION_SPEED;
             
+            if (leftDestination <= leftXLimit) {
+                
+                goingRight = true;
+                goRight();
+                
+            }
+            
+            else {
+                
+                goLeft();
+                
+            }
             
         }
         
