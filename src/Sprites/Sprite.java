@@ -16,6 +16,9 @@ public abstract class Sprite extends ImageView {
     private double width;
     private double height;
     
+    public double health = 100;
+    public HealthBar healthBar;
+    
     
     public double height() {
         
