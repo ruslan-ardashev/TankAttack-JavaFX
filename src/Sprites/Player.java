@@ -13,19 +13,13 @@ import tankattack.*;
  * @author Ruslan
  */
 public class Player extends Sprite {
-
     
-    public Player() {
+    public static String imageName = "testTank.png";
+    
+    public Player(double x, double y) {
         
-        super();
-        this.setImage(new Image(getClass().getResourceAsStream("testTank.png")));
-        
-        this.setWidth(this.getImage().getWidth());
-        this.setHeight(this.getImage().getHeight());
-        
-        this.setTranslateX((TankAttack.gameWidth  - width())/2);
-        this.setTranslateY((TankAttack.gameHeight - height())/2);
-        
+        super(Player.imageName, x, y);
+                
         this.healthBar = null;
         System.out.println("null healthbar for now for player in constructor");
                 
