@@ -16,10 +16,11 @@ public class Player extends Sprite {
     
     public static String imageName = "testTank.png";
     
-    public Player(double x, double y) {
+    public Player(double x, double y, World world) {
         
-        super(Player.imageName, x, y);
+        super(Player.imageName, x, y, world);
                 
+        this.health = 100.0;
         this.healthBar = null;
         System.out.println("null healthbar for now for player in constructor");
                 
