@@ -22,6 +22,21 @@ public abstract class Sprite extends ImageView {
     public HealthBar healthBar;
        
     
+    public Sprite(String image, double x, double y) {
+        
+        if (image == null) {
+            System.out.println("Forgot to pass image into sprite being created!");
+        }
+                
+        this.setImage(new Image(getClass().getResourceAsStream(image)));
+        
+        this.width = this.getImage().getWidth();
+        this.height = this.getImage().getHeight();
+        
+        this.setTranslateX( x -  width/2 );
+        this.setTranslateY( y - height/2 );
+        
+    }
     
     public double height() {
         
