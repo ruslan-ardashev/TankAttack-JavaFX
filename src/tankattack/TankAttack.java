@@ -114,13 +114,9 @@ public class TankAttack extends Application {
 
             public void handle(ActionEvent event) {
                 
-                initTankAttack(stage);
-
-                displayCurrentScene();
-
                 stage.setTitle("TANK ATTACK");
-
-                setupAndLaunchGameLoopForCurrWorld();
+                currWorld = new FirstWorld(stage);
+                initCurrWorld();
                 
             }
             
@@ -161,38 +157,22 @@ public class TankAttack extends Application {
         
     }
     
-    public void setupAndLaunchGameLoopForCurrWorld() {
-
-        currWorld.initAnimation();
-    
-    }
-    
     public void transitionFromFirstWorldToSecondWorld() {
         
-        // Init World 2
+        System.out.println("[transitionFromFirstWorldToSecondWorld] called");
         currWorld = new SecondWorld(currStage);
-        
-        // Display World 2
-        
+        initCurrWorld();
         
     }
 
-    private void initTankAttack(Stage stage) {
+    private void initCurrWorld() {
         
-        currWorld = new FirstWorld(stage);
+        // Prior to this method, set currWorld. 
+        // rest is good to go.
+        
         currScene = currWorld.createScene();
-        
-    }
-    
-    private void displayCurrentScene() {
-        
         currStage.setScene(currScene);
-        
-    }
-    
-    public void tellStageToShowScene(Scene scene) {
-        
-        currStage.setScene(scene);
+        currWorld.initAnimation();
         
     }
 
