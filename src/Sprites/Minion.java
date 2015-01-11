@@ -14,6 +14,9 @@ import tankattack.*;
 public class Minion extends Enemy {
 
     public static String imageName = "minion.png";
+    
+    private double leftXLimit, rightXLimit;
+    private boolean goingRight;
 
     public Minion(double x, double y, World world) {
         
