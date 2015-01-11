@@ -122,6 +122,7 @@ public abstract class World {
         
         scene = new Scene(root, TankAttack.gameWidth, TankAttack.gameHeight, Color.CORNFLOWERBLUE);
         scene.setOnKeyPressed(e -> handleKeyInput(e));
+        scene.setOnKeyReleased(e -> handleKeyRelease(e));
         return scene;
         
     }
