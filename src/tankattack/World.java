@@ -54,17 +54,23 @@ public abstract class World {
         }
         
         sprites.add(s);
-        
         root.getChildren().add(s);
         
     }
     
-    public ArrayList<Sprite> getSprites() {
+    public void removeSprite(Sprite s) {
         
-        return sprites;
+        if (sprites == null) {
+            
+            return;
+            
+        }
+        
+        sprites.remove(s);
+        root.getChildren().remove(s);
         
     }
-    
+        
     public void setPlayerSprite(Player player) {
         
         playerSprite = player;
