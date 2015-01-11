@@ -59,6 +59,18 @@ public class Minion extends Enemy {
         return false;
         
     }
+
+    private void goLeft() {
+
+        this.setTranslateX(this.getTranslateX() - TankAttack.MINION_SPEED);
+    
+    }
+
+    private void goRight() {
+
+        this.setTranslateX(this.getTranslateX() + TankAttack.MINION_SPEED);
+    
+    }
     
     
     
