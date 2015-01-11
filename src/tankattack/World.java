@@ -259,7 +259,7 @@ public abstract class World {
         
     }
 
-    private void handleKeyRelease(KeyEvent e) {
+    public void handleKeyRelease(KeyEvent e) {
         
         KeyCode keyCode = e.getCode();
         
