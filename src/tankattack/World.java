@@ -173,7 +173,7 @@ public abstract class World {
         
         // Temporary end to game
         
-        if (playerSprite.getTranslateX() < 0) {
+        if (playerSprite.getTranslateX() < 10) {
             
             System.out.println("updateSprites calling finish.");
             endOfLevel();
