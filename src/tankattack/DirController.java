@@ -12,6 +12,7 @@ package tankattack;
 public class DirController {
     
     public static boolean upPressed, downPressed, leftPressed, rightPressed;
+    public static boolean spacePressed;
     
     // Improvements in speed. No new objects @ 60Hz
     public static double[] returnArray;
