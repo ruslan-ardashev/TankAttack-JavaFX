@@ -12,6 +12,7 @@ package Sprites;
 public abstract class Enemy extends Sprite {
     
     public abstract void updateEnemyXY();
-    public abstract void didEnemyFire();
+    public abstract boolean isFiring();
+    
     
 }
