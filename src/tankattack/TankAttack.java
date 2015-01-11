@@ -27,12 +27,12 @@ public class TankAttack extends Application {
     public static final double gameWidth = 600;
     public static final double gameHeight = 600;
     
-    public static final int NUM_FRAMES_PER_SECOND = 60;
+    public static final int NUM_FRAMES_PER_SECOND = 30;
     
     public static double buttonWidth = gameWidth / 5;
     public static double buttonHeight = gameWidth / 10;
     
-    public static double PLAYER_SPEED = 4;
+    public static double PLAYER_SPEED = 2;
     
     public static TankAttack sharedInstance;
     private Stage currStage;
