@@ -24,12 +24,29 @@ public class SecondWorld extends World {
 
     @Override
     public void createInitialSprites() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        createPlayerSprite();
+        // Other sprites
+        System.out.println("TODO FOR WORLD 2: make other sprites on createInitialSprites!");
+        
     }
 
     @Override
     public void signalEndOfLevel() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public Scene createScene() {
+        
+        this.setGroup(new Group());
+        createInitialSprites();
+        
+        
+        this.setScene(new Scene(this.getGroup(), TankAttack.gameWidth, TankAttack.gameHeight, Color.PURPLE));
+        this.getScene().setOnKeyPressed(e -> handleKeyInput(e));
+        return this.getScene();
+        
     }
     
 }
