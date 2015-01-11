@@ -11,6 +11,14 @@ package Sprites;
  */
 public class Boss extends Enemy {
 
+    public static String imageName = "bossTank.png";
+    
+    public Boss(double x, double y) {
+        
+        super(Boss.imageName, x, y);
+        
+    }
+
     @Override
     public void updateEnemyXY() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

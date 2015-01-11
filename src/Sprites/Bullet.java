@@ -10,5 +10,15 @@ package Sprites;
  * @author Ruslan
  */
 public class Bullet extends Sprite {
+
+    public static String imageName = "bullet.png";
+    
+    public Bullet(double x, double y) {
+        
+        super(Bullet.imageName, x, y);
+        
+    }
+    
+    
     
 }

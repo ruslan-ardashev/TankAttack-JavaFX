@@ -11,6 +11,14 @@ package Sprites;
  */
 public class Minion extends Enemy {
 
+    public static String imageName = "minionTank.png";
+
+    public Minion(double x, double y) {
+        
+        super(Minion.imageName, x, y);
+        
+    }
+    
     @Override
     public void updateEnemyXY() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
