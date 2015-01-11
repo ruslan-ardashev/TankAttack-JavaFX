@@ -52,7 +52,7 @@ public class TankAttack extends Application {
         
         stage.setTitle("Main Menu");
         Group menuRoot = new Group();
-        final Scene mainMenu = new Scene(menuRoot, TankAttack.gameWidth, TankAttack.gameHeight);
+        final Scene mainMenu = new Scene(menuRoot, TankAttack.gameWidth, TankAttack.gameHeight, Color.CORNFLOWERBLUE);
         
         // Launch Background Animation
         launchAnimationForDisplayMenu(stage, menuRoot);
@@ -74,7 +74,7 @@ public class TankAttack extends Application {
         for(int cont = 0 ; cont < 30 ; cont++) {  
             
             Circle circle = new Circle();  
-            circle.setFill(Color.BLUE);  
+            circle.setFill(Color.CRIMSON);  
             circle.setEffect(new GaussianBlur(Math.random() * 8 + 2));  
             circle.setOpacity(Math.random());  
             circle.setRadius(Math.random()*30);  
