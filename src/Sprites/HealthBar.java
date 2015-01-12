@@ -34,7 +34,11 @@ public class HealthBar extends Group {
         this.redBar = new Rectangle();
         this.redBar.setFill(Color.RED);
         
-        this.getChildren().addAll(greenBar, redBar);
+        // Done in this very specific order for a reason -
+        // creates a static red bar. Green bar is overlayed.
+        // As green shrinks, red grows withou need for gross math. yay!
+        this.getChildren().add(redBar);
+        this.getChildren().add(greenBar);
         
     }
     
