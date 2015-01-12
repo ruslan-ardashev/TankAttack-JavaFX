@@ -510,6 +510,13 @@ public abstract class World {
     
     }
 
+    private void handleCollisionWithEnemy(Enemy s) {
+        
+        playerSprite.health = 0;
+        s.health = 0;
+        
+    }
+
     private void updateAllSpritesToCheckForDeath() {
         
         for (Sprite s : sprites) {
