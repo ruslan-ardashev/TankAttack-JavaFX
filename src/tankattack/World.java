@@ -31,6 +31,8 @@ public abstract class World {
     
     private Stage myStage;
     
+    public static World sharedInstance;
+    
     private Scene scene;
     private Group root;
     private Circle myEnemy;
