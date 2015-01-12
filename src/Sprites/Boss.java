@@ -36,11 +36,37 @@ public class Boss extends Enemy {
     @Override
     public boolean isFiring() {
         
-        // TODO
-        return false;
+        if (isAlive) {
+            double randomChance = Math.random();
+
+            if (randomChance <= .13) {
+
+                return true;
+
+            }
+
+            else {
+
+                return false;
+
+            }
+        }
+        
+        else {
+            
+            return false;
+            
+        }
+        
+        
+        
+    }
+    
+    @Override
+    public void displayDeath() {
+
+        this.setImage(new Image(getClass().getResourceAsStream("bossDeath.png")));
     
     }
- 
-    
-    
+
 }
