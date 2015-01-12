@@ -21,6 +21,18 @@ public class HealthBar extends Group {
         
         super();
         this.health = health;
+        this.initRectangles();
+        
+    }
+    
+    private void initRectangles() {
+        
+        this.greenBar = new Rectangle();       
+//        this.greenBar.setFill();
+        
+        this.redBar = new Rectangle();
+        
+        this.getChildren().addAll(greenBar, redBar);
         
     }
     
