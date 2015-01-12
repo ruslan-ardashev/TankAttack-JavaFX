@@ -66,6 +66,7 @@ public class Boss extends Enemy {
     public void displayDeath() {
 
         this.setImage(new Image(getClass().getResourceAsStream("bossDeath.png")));
+        this.isAlive = false;
     
     }
 
