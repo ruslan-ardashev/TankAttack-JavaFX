@@ -116,6 +116,12 @@ public class Minion extends Enemy {
     
     }
     
+    @Override
+    public void displayDeath() {
+
+        this.setImage(new Image(getClass().getResourceAsStream("normalDeath.png")));
+        this.isAlive = false;
     
+    }
     
 }
