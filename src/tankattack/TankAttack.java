@@ -36,6 +36,8 @@ public class TankAttack extends Application {
     public static double MINION_SPEED = 2.1;
     public static double BULLET_SPEED = 5.5;
     
+    public static double BULLET_DAMAGE = 10;
+    
     public static TankAttack sharedInstance;
     private Stage currStage;
     private World currWorld;
