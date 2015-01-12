@@ -43,7 +43,7 @@ public abstract class World {
     private ArrayList<Sprite> spritesToRemove;
     private ArrayList<Bullet> bullets;
     private ArrayList<Bullet> bulletsToRemove;
-    private Player playerSprite;
+    public Player playerSprite;
         
     private Timeline timeline;
 
