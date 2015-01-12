@@ -14,7 +14,7 @@ import tankattack.*;
  */
 public class Player extends Sprite {
     
-    public static String imageName = "testTank.png";
+    public static String imageName = "player.png";
     
         
     // Performance-Improving Variables
