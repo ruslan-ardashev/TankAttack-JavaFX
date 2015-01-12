@@ -238,6 +238,8 @@ public abstract class World {
         fiveSecondDelay.play();
         
     }
+        // http://stackoverflow.com/questions/9966136/javafx-periodic-background-task
+        //// //// //// //// //// //// //// //// //// //// //// //// //// //// //// //
         
         // Tell TankAttack to put up the next world.
         signalEndOfLevel();
@@ -245,8 +247,10 @@ public abstract class World {
     }
     
     private void showEndOfLevelText() {
+        // http://docs.oracle.com/javafx/2/ui_controls/label.htm
         
         System.out.println("TODO: Animate text over this level's end saying END OF LEVEL.");
+        // http://docs.oracle.com/javafx/2/ui_controls/label.htm
         
     }
     
