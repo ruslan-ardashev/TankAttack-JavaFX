@@ -35,6 +35,7 @@ public abstract class World {
     
     private ArrayList<Sprite> sprites;
     private ArrayList<Bullet> bullets;
+    private ArrayList<Bullet> bulletsToRemove;
     private Player playerSprite;
         
     private Timeline timeline;
@@ -355,7 +356,41 @@ public abstract class World {
             }
 
         }
+        
+        removeOutOfBoundaryBullets();
 
+    }
+
+    private void removeOutOfBoundaryBullets() {
+
+        if (bulletsToRemove == null) {
+            
+            return;
+            
+        }
+        
+        for (Bullet b : bulletsToRemove) {
+            
+            bullets.remove(b);
+            root.getChildren().remove(b);
+            System.out.println("Removed bullet from array.:" +b);
+            
+        }
+        
+        bulletsToRemove.clear();
+        
+    }
+    
+    public void addToOutOfBoundaryBulletsArray(Bullet b) {
+        
+        if (bulletsToRemove == null) {
+            
+            bulletsToRemove = new ArrayList<Bullet>();
+            
+        }
+        
+        bulletsToRemove.add(b);
+        
     }
 
 }

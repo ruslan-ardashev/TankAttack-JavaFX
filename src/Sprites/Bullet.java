@@ -35,7 +35,7 @@ public class Bullet extends Sprite {
         // Out of bounds check. Free up memory.
         if (outOfBounds) {
             
-            removeSelfFromExistence();
+            addSelfToRemoveFromWorldArray();
             return;
             
         }
@@ -60,10 +60,10 @@ public class Bullet extends Sprite {
         
     }
 
-    private void removeSelfFromExistence() {
+    private void addSelfToRemoveFromWorldArray() {
 
-//        this.world.removeSprite(this);
-    
+        this.world.addToOutOfBoundaryBulletsArray(this);
+        
     }
     
     
