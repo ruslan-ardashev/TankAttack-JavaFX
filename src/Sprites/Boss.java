@@ -29,7 +29,22 @@ public class Boss extends Enemy {
     @Override
     public void updateEnemyXY() {
 
+        double playerLocation = this.world.playerSprite.getTranslateX();
+        
+        boolean isPlayerToTheRightOfBoss = (playerLocation > this.getTranslateX());
+        
         // TODO
+        if (isPlayerToTheRightOfBoss) {
+            
+            goRight();
+            
+        }
+        
+        else {
+            
+            goLeft();
+            
+        }
     
     }
 
@@ -67,6 +82,18 @@ public class Boss extends Enemy {
 
         this.setImage(new Image(getClass().getResourceAsStream("bossDeath.png")));
         this.isAlive = false;
+    
+    }
+
+    private void goRight() {
+
+        this.setTranslateX(this.getTranslateX() + TankAttack.BOSS_SPEED);
+    
+    }
+
+    private void goLeft() {
+
+        this.setTranslateX(this.getTranslateX() - TankAttack.BOSS_SPEED);
     
     }
 

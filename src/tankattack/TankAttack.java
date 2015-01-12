@@ -34,6 +34,7 @@ public class TankAttack extends Application {
     
     public static double PLAYER_SPEED = 2.5;
     public static double MINION_SPEED = 2.1;
+    public static double BOSS_SPEED = 1.4;
     public static double BULLET_SPEED = 5.5;
     
     public static double BULLET_DAMAGE = 10;
