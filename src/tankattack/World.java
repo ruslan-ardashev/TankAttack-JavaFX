@@ -215,7 +215,7 @@ public abstract class World {
         
     }
 
-    private void endOfLevel() {
+    private void endOfLevelSuccess() {
         
         timeline.pause();
         
