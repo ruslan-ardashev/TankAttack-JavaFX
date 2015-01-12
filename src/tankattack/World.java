@@ -392,7 +392,6 @@ public abstract class World {
             
             bullets.remove(b);
             root.getChildren().remove(b);
-            System.out.println("Removed bullet from array.:" +b);
             
         }
         
