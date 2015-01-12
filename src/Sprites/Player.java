@@ -58,5 +58,17 @@ public class Player extends Sprite {
         this.setTranslateY(newXY[1]);    
     
     }
+ 
+    public double getBulletOffsetX() {
+        
+        return (this.getTranslateX() + this.width()/2 );
+        
+    }
+    
+    public double getBulletOffsetY() {
+        
+        return (this.getTranslateY());
+        
+    }
     
 }
