@@ -268,11 +268,38 @@ public abstract class World {
         
     }
     
-    private void showEndOfLevelText() {
-        // http://docs.oracle.com/javafx/2/ui_controls/label.htm
+    public void showEndOfLevelTextSuccess() {
         
-        System.out.println("TODO: Animate text over this level's end saying END OF LEVEL.");
+        Label l = new Label("SUCCESS");
+        
         // http://docs.oracle.com/javafx/2/ui_controls/label.htm
+        l.setFont(new Font("Arial", 60));
+        l.setTextFill(Color.GREEN);
+        
+        l.setTranslateY(TankAttack.gameHeight / 2.5);
+        
+        // TODO The x is hardcoded. fix it in case game dimensions change
+        l.setTranslateX(180);
+        
+        root.getChildren().add(l);
+        
+        
+    }
+    
+    private void showEndOfLevelFailure() {
+                
+        Label l = new Label("FAILURE");
+        
+        // http://docs.oracle.com/javafx/2/ui_controls/label.htm
+        l.setFont(new Font("Arial", 60));
+        l.setTextFill(Color.RED);
+        
+        l.setTranslateY(TankAttack.gameHeight / 2.5);
+        
+        // TODO The x is hardcoded. fix it in case game dimensions change
+        l.setTranslateX(180);
+        
+        root.getChildren().add(l);
         
     }
     
