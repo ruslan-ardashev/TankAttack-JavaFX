@@ -331,7 +331,7 @@ public abstract class World {
 
     private void handleEnemyFiring(Enemy enemy) {
 
-        System.out.println("TODO: implement enemy firing inside World [handleEnemyFiring]");
+        new Bullet(enemy.getBulletOffsetX(), enemy.getBulletOffsetY(), this, false);
     
     }
 
