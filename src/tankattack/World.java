@@ -179,21 +179,25 @@ public abstract class World {
         
         ////// DONE ////////////////////////////
         playerSprite.updateLocation();
-
-        ////// DONE ////////////////////////////
         
-        ////// IMPLEMENT ////////////////////////////
         // Handle Player Firing
         handleFiring();
-                
+        
         // Other Updates
         updateEnemySprites();       // also handles enemy fire
         
         // Bullet Movement
         updateBulletMovements();
+
+        ////// DONE ////////////////////////////
         
-        // Register Collisions / Hits
-//        handleCollision();
+        ////// IMPLEMENT ////////////////////////////
+        
+        // Register Collisions With Tanks
+        handleCollision();
+        
+        // Register Collisions Between Sprites & Bullets
+        handleCollisionBullets();
         
         // Check for win
         checkForWin();
