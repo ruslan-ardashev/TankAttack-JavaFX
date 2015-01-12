@@ -40,37 +40,29 @@ public abstract class World {
 
     
     // Setters, Getters
-    public synchronized void addSprite(Sprite s) {
+    public void addSprite(Sprite s) {
         
         if (sprites == null) {
 
                 sprites = new ArrayList();
 
         }
-        
-        synchronized(sprites) {
-            
-            sprites.add(s);
-            root.getChildren().add(s);
-            
-        }
+                    
+        sprites.add(s);
+        root.getChildren().add(s);
         
     }
     
-    public synchronized void removeSprite(Sprite s) {
-        
-        synchronized(sprites) {
-        
-            if (sprites == null) {
+    public void removeSprite(Sprite s) {
+                
+        if (sprites == null) {
 
-                return;
-
-            }
-
-            sprites.remove(s);
-            root.getChildren().remove(s);
+            return;
 
         }
+
+        sprites.remove(s);
+        root.getChildren().remove(s);
         
     }
         
