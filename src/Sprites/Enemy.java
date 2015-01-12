@@ -22,5 +22,16 @@ public abstract class Enemy extends Sprite {
     public abstract void updateEnemyXY();
     public abstract boolean isFiring();
     
+    public double getBulletOffsetX() {
+        
+        return (this.getTranslateX() + this.width()/2 );
+        
+    }
+    
+    public double getBulletOffsetY() {
+        
+        return (this.getTranslateY() + this.height());
+        
+    }
     
 }
