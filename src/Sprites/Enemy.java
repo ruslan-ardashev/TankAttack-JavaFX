@@ -70,4 +70,14 @@ public abstract class Enemy extends Sprite {
         fiveSecondDelay.play();
         
     }
+
+    public abstract void displayDeath();
+
+    private void addSelfToSpritesToRemove() {
+
+        this.world.addSpriteToRemove(this);
+    
+    }
+    
+    
 }
