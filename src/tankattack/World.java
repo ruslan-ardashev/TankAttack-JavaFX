@@ -492,7 +492,24 @@ public abstract class World {
     }
 
     private void handleCollisionBullets() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        for (Sprite s : sprites) {
+            
+            for (Bullet b : bullets) {
+                
+                if (s.getBoundsInParent().intersects(b.getBoundsInParent())) {
+                    
+                    b.addSelfToRemoveFromWorldArray();
+                    s.health -= TankAttack.BULLET_DAMAGE;
+                    
+                }
+                
+            }
+            
+        }
+    
+    }
+
     private void updateAllSpritesToCheckForDeath() {
         
         for (Sprite s : sprites) {
