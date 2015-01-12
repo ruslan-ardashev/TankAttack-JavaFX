@@ -48,7 +48,7 @@ public class TankAttack extends Application {
         
         sharedInstance = this;
         currStage = primaryStage;
-        displayStartMenu(primaryStage);
+        displayStartMenu();
 
     }
     
