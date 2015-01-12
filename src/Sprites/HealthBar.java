@@ -11,7 +11,7 @@ import javafx.scene.shape.*;
  *
  * @author Ruslan
  */
-public class HealthBar extends Rectangle {
+public class HealthBar extends Group {
     
     private double health;
     private Rectangle greenBar, redBar;
