@@ -6,6 +6,7 @@
 package Sprites;
 
 import javafx.scene.*;
+import javafx.scene.paint.*;
 import javafx.scene.shape.*;
 
 /**
@@ -28,9 +29,10 @@ public class HealthBar extends Group {
     private void initRectangles() {
         
         this.greenBar = new Rectangle();       
-//        this.greenBar.setFill();
+        this.greenBar.setFill(Color.GREEN);
         
         this.redBar = new Rectangle();
+        this.redBar.setFill(Color.RED);
         
         this.getChildren().addAll(greenBar, redBar);
         
