@@ -34,6 +34,7 @@ public abstract class World {
     private Random myGenerator = new Random();
     
     private ArrayList<Sprite> sprites;
+    private ArrayList<Bullet> bullets;
     private Player playerSprite;
         
     private Timeline timeline;
@@ -41,14 +42,31 @@ public abstract class World {
     
     // Setters, Getters
     public void addSprite(Sprite s) {
+                
+        if (s instanceof Bullet) {
+            
+            if (bullets == null) {
+
+                bullets = new ArrayList();
+
+            }
+            
+            bullets.add((Bullet)s);
+            
+        }
         
-        if (sprites == null) {
+        else {
+            
+            if (sprites == null) {
 
                 sprites = new ArrayList();
 
+            }
+            
+            sprites.add(s);
+            
         }
-                    
-        sprites.add(s);
+        
         root.getChildren().add(s);
         
     }
@@ -320,7 +338,14 @@ public abstract class World {
 
         Bullet b;
 
-        for (Sprite s : sprites) {
+        if (bullets == null) {
+            
+            bullets = new ArrayList<Bullet>();
+            return;
+            
+        }
+        
+        for (Sprite s : bullets) {
 
             if (s instanceof Bullet) {
 
