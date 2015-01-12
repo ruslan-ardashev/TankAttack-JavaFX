@@ -219,8 +219,25 @@ public abstract class World {
         
         timeline.pause();
         
-        // TODO: Display level complete.
-        showEndOfLevelText();
+        // TODO: Display level success.
+        showEndOfLevelTextSuccess();
+        
+        Timeline fiveSecondDelay = new Timeline(new KeyFrame(Duration.seconds(5), new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                
+                // Tell TankAttack to put up the next world.
+                signalEndOfLevel();
+        
+            }
+            
+        }));
+        
+        fiveSecondDelay.setCycleCount(1);
+        fiveSecondDelay.play();
+        
+    }
         
         // Tell TankAttack to put up the next world.
         signalEndOfLevel();
