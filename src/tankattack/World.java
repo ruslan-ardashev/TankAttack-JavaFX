@@ -378,9 +378,7 @@ public abstract class World {
                 
                 if (playerSprite.getBoundsInParent().intersects(s.getBoundsInParent())){
                     
-                    System.out.println("COLLISION WITH SPRITE: " + s);
-                    System.out.println("TODO: Implement player dying here");
-                    handleCollisionWithEnemy();
+                    handleCollisionWithEnemy((Enemy)s);
                     
                 }
                 
@@ -501,7 +499,7 @@ public abstract class World {
                     
                     b.addSelfToRemoveFromWorldArray();
                     s.health -= TankAttack.BULLET_DAMAGE;
-                    
+                                        
                 }
                 
             }
