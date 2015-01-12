@@ -139,6 +139,7 @@ public abstract class World {
     public World(Stage stage) {
         
         this.myStage = stage;
+        World.sharedInstance = this;
         
     }
     
