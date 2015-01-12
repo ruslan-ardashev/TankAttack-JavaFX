@@ -358,10 +358,9 @@ public abstract class World {
     private void checkForWin() {
         
         // Temporary end to game
-        if (playerSprite.getTranslateX() < 10) {
+        if (sprites.size() == 1) {
             
-            System.out.println("updateSprites calling finish.");
-            endOfLevel();
+            endOfLevelSuccess();
             
             // TODO Implement this.
             // Player is left all alone. Stop animation. Level defeated.
