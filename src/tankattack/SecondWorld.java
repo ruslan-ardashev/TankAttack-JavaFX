@@ -49,5 +49,11 @@ public class SecondWorld extends World {
         return this.getScene();
         
     }
+
+    private void createBossSprite() {
+
+        new Boss(TankAttack.gameWidth/2, 80.0, this);
+    
+    }
     
 }
