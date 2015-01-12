@@ -207,6 +207,8 @@ public abstract class World {
         // Register Collisions Between Sprites & Bullets
         handleCollisionBullets();
         
+        updateAllSpritesToCheckForDeath();
+        
         // Check for win
         checkForWin();
         ////// IMPLEMENT ////////////////////////////
