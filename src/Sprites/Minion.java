@@ -87,13 +87,20 @@ public class Minion extends Enemy {
     @Override
     public boolean isFiring() {
         
-        // TODO
-        double randomChance = Math.random();
-                
-        if (randomChance <= .13) {
-            
-            return true;
-            
+        if (isAlive) {
+            double randomChance = Math.random();
+
+            if (randomChance <= .13) {
+
+                return true;
+
+            }
+
+            else {
+
+                return false;
+
+            }
         }
         
         else {
