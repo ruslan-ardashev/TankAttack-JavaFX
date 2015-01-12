@@ -40,29 +40,37 @@ public abstract class World {
 
     
     // Setters, Getters
-    public void addSprite(Sprite s) {
+    public synchronized void addSprite(Sprite s) {
         
         if (sprites == null) {
-            
-            sprites = new ArrayList();
-            
+
+                sprites = new ArrayList();
+
         }
         
-        sprites.add(s);
-        root.getChildren().add(s);
+        synchronized(sprites) {
+            
+            sprites.add(s);
+            root.getChildren().add(s);
+            
+        }
         
     }
     
-    public void removeSprite(Sprite s) {
+    public synchronized void removeSprite(Sprite s) {
         
-        if (sprites == null) {
-            
-            return;
-            
+        synchronized(sprites) {
+        
+            if (sprites == null) {
+
+                return;
+
+            }
+
+            sprites.remove(s);
+            root.getChildren().remove(s);
+
         }
-        
-        sprites.remove(s);
-        root.getChildren().remove(s);
         
     }
         
@@ -164,11 +172,14 @@ public abstract class World {
         ////// DONE ////////////////////////////
         
         ////// IMPLEMENT ////////////////////////////
-        // Other Updates
-        updateEnemySprites();
-        
-        // Handle Firing
+        // Handle Player Firing
         handleFiring();
+                
+        // Other Updates
+        updateEnemySprites();       // also handles enemy fire
+        
+        // Bullet Movement
+        updateBulletMovements();
         
         // Register Collisions / Hits
 //        handleCollision();
@@ -293,7 +304,6 @@ public abstract class World {
             
         }
         
-    
     }
 
     // Player firing, NOT enemy firing.
@@ -302,19 +312,9 @@ public abstract class World {
         // Check if space bar pressed, create new bullets for Player
         if (DirController.spacePressed) {
             
-            // Implement.
-            System.out.println("PEW PEW"); 
-            
-            
+            new Bullet(playerSprite.getBulletOffsetX(), playerSprite.getBulletOffsetY(), this, true);
             
         }
-        
-        // Update existing bullets that are moving
-        
-        
-        // Handle enemy firing
-        
-        
         
     }
 
@@ -324,10 +324,24 @@ public abstract class World {
     
     }
 
+    private void updateBulletMovements() {
+
+        Bullet b;
+
+        for (Sprite s : sprites) {
+
+            if (s instanceof Bullet) {
+
+                b = (Bullet)s;
+                b.updateXY();
+
+            }
+
+        }
+
+    }
 
 }
-
-
 
 
 
