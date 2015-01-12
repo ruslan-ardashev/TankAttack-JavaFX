@@ -29,6 +29,10 @@ public class Boss extends Enemy {
     @Override
     public void updateEnemyXY() {
 
+        if (!isAlive) {
+            return;
+        }
+        
         double playerLocation = this.world.playerSprite.getTranslateX();
         
         boolean isPlayerToTheRightOfBoss = (playerLocation > this.getTranslateX());
