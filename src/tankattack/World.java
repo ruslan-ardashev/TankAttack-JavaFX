@@ -40,6 +40,7 @@ public abstract class World {
     private Random myGenerator = new Random();
     
     private ArrayList<Sprite> sprites;
+    private ArrayList<Sprite> spritesToRemove;
     private ArrayList<Bullet> bullets;
     private ArrayList<Bullet> bulletsToRemove;
     private Player playerSprite;
