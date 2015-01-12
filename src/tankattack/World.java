@@ -238,11 +238,33 @@ public abstract class World {
         fiveSecondDelay.play();
         
     }
+    
+    public void endOfLevelFailure() {
+        
+        timeline.pause();
+        
+        // TODO: Display level failure.
+        showEndOfLevelFailure();
+        
         // http://stackoverflow.com/questions/9966136/javafx-periodic-background-task
+        Timeline fiveSecondDelay = new Timeline(new KeyFrame(Duration.seconds(5), new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                
+                // Display Main Menu
+                TankAttack.sharedInstance.displayStartMenu();
+        
+            }
+            
+        }));
+        
+        fiveSecondDelay.setCycleCount(1);
+        fiveSecondDelay.play();
+        
         //// //// //// //// //// //// //// //// //// //// //// //// //// //// //// //
         
-        // Tell TankAttack to put up the next world.
-        signalEndOfLevel();
+        
         
     }
     
