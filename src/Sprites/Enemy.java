@@ -13,9 +13,12 @@ import tankattack.*;
  */
 public abstract class Enemy extends Sprite {
     
+    public boolean isAlive;
+    
     public Enemy(String image, double x, double y, World world) {
         
         super(image, x, y, world);
+        this.isAlive = true;
                 
     }
     
