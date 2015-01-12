@@ -47,18 +47,8 @@ public class HealthBar extends Group {
         
         this.health -= amount;
         
+        return (this.health == 0);
         
-        if (this.health == 0) {
-            
-            return true;
-            
-        }
-        
-        else {
-            
-            return false;
-            
-        }
         
     }
     
