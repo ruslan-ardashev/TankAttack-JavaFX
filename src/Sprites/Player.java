@@ -71,6 +71,18 @@ public class Player extends Sprite {
         
     }
     
+    @Override
+    public void checkForDeathAndReactAppropriately() {
+
+        if (this.health <= 0) {
+            
+            displayDeath();
+            this.world.endOfLevelFailure();
+            
+        }
+
+    }
+
     private void displayDeath() {
 
         this.setImage(new Image(getClass().getResourceAsStream("normalDeath.png")));
