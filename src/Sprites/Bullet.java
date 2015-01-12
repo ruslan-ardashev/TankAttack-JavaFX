@@ -59,7 +59,7 @@ public class Bullet extends Sprite {
         
     }
 
-    private void addSelfToRemoveFromWorldArray() {
+    public void addSelfToRemoveFromWorldArray() {
 
         this.world.addToOutOfBoundaryBulletsArray(this);
         
