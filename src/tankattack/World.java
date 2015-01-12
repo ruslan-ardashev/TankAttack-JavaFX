@@ -380,6 +380,7 @@ public abstract class World {
                     
                     System.out.println("COLLISION WITH SPRITE: " + s);
                     System.out.println("TODO: Implement player dying here");
+                    handleCollisionWithEnemy();
                     
                 }
                 
