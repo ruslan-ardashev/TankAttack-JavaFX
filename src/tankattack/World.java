@@ -411,6 +411,10 @@ public abstract class World {
         
     }
 
+    private void handleCollisionBullets() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
 
 
