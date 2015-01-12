@@ -13,12 +13,56 @@ import tankattack.*;
  */
 public class Bullet extends Sprite {
 
+    public boolean goingUp;
+    
     public static String imageName = "bullet.png";
     
-    public Bullet(double x, double y, World world) {
+    public Bullet(double x, double y, World world, boolean goingUp) {
         
         super(Bullet.imageName, x, y, world);
         
+        this.goingUp = goingUp;
+        
+    }
+    
+    public void updateXY() {
+        
+        boolean outOfBounds = 
+                (this.getTranslateY() > TankAttack.gameHeight) 
+                || 
+                (this.getTranslateY() < 0.0);
+                
+        // Out of bounds check. Free up memory.
+        if (outOfBounds) {
+            
+            removeSelfFromExistence();
+            return;
+            
+        }
+        
+        else {
+                        
+            if (goingUp) {
+
+                // Subtract y. y is actually up. Player.
+                this.setTranslateY(this.getTranslateY() - TankAttack.BULLET_SPEED);
+
+            }
+
+            else {
+
+                // Add y. Enemies code. "Down" is +y
+                this.setTranslateY(this.getTranslateY() + TankAttack.BULLET_SPEED);
+
+            }
+            
+        }
+        
+    }
+
+    private void removeSelfFromExistence() {
+
+    
     }
     
     
