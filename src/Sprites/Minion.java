@@ -81,8 +81,21 @@ public class Minion extends Enemy {
     public boolean isFiring() {
         
         // TODO
+        double randomChance = Math.random();
         
-        return false;
+        System.out.println(randomChance);
+        
+        if (randomChance <= .13) {
+            
+            return true;
+            
+        }
+        
+        else {
+            
+            return false;
+            
+        }
         
     }
 
