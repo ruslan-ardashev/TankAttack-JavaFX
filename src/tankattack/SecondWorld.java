@@ -27,13 +27,15 @@ public class SecondWorld extends World {
         
         createPlayerSprite();
         // Other sprites
-        System.out.println("TODO FOR WORLD 2: make other sprites on createInitialSprites!");
+        createBossSprite();
         
     }
 
     @Override
     public void signalEndOfLevel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        TankAttack.sharedInstance.displayStartMenu();
+    
     }
     
     @Override
