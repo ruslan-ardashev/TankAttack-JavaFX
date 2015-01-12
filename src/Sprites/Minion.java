@@ -15,14 +15,14 @@ import tankattack.*;
 public class Minion extends Enemy {
 
     public static String imageName = "minion.png";
-    
+        
     private double leftXLimit, rightXLimit;
     private boolean goingRight;
 
     public Minion(double x, double y, World world, double leftXLimit, double rightXLimit, boolean goingRight) {
         
         super(Minion.imageName, x, y, world);
-        this.health = 100.0;
+        this.health = 10.0;
         this.healthBar = null;
         System.out.println("in minion constructor, need to create HealthBar");
         
