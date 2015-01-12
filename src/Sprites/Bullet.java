@@ -62,6 +62,7 @@ public class Bullet extends Sprite {
 
     private void removeSelfFromExistence() {
 
+//        this.world.removeSprite(this);
     
     }
     
