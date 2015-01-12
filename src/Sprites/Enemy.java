@@ -54,7 +54,7 @@ public abstract class Enemy extends Sprite {
     
     public void removeSelfFromWorldAfterDelay() {
         
-        Timeline fiveSecondDelay = new Timeline(new KeyFrame(Duration.seconds(5), new EventHandler<ActionEvent>() {
+        Timeline twoSecDelay = new Timeline(new KeyFrame(Duration.seconds(2), new EventHandler<ActionEvent>() {
 
         @Override
         public void handle(ActionEvent event) {
@@ -66,8 +66,8 @@ public abstract class Enemy extends Sprite {
             
         }));
         
-        fiveSecondDelay.setCycleCount(1);
-        fiveSecondDelay.play();
+        twoSecDelay.setCycleCount(1);
+        twoSecDelay.play();
         
     }
 
