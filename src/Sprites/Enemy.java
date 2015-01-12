@@ -5,6 +5,9 @@
  */
 package Sprites;
 
+import javafx.animation.*;
+import javafx.event.*;
+import javafx.util.*;
 import tankattack.*;
 
 /**
