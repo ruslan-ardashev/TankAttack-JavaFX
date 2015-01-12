@@ -8,12 +8,16 @@ package tankattack;
 import Sprites.*;
 import java.util.*;
 import javafx.animation.*;
+import javafx.event.*;
 import javafx.geometry.*;
 import javafx.scene.*;
+import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.input.*;
+import javafx.scene.layout.*;
 import javafx.scene.paint.*;
 import javafx.scene.shape.*;
+import javafx.scene.text.*;
 import javafx.stage.*;
 import javafx.util.*;
 
