@@ -493,6 +493,35 @@ public abstract class World {
 
     private void handleCollisionBullets() {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addSpriteToRemove(Sprite s) {
+
+        if (spritesToRemove == null) {
+            
+            spritesToRemove = new ArrayList<Sprite>();
+            
+        }
+        
+        spritesToRemove.add(s);
+    
+    }
+    
+    public void removeSpritesToRemove() {
+     
+        if (spritesToRemove == null) {
+            
+            return;
+            
+        }
+        
+        for (Sprite s : spritesToRemove) {
+            
+            sprites.remove(s);
+            root.getChildren().remove(s);
+            
+        }
+        
+        spritesToRemove.clear();
+        
     }
 
 }
