@@ -45,4 +45,23 @@ public abstract class Enemy extends Sprite {
         }
 
     }
+    
+    public void removeSelfFromWorldAfterDelay() {
+        
+        Timeline fiveSecondDelay = new Timeline(new KeyFrame(Duration.seconds(5), new EventHandler<ActionEvent>() {
+
+        @Override
+        public void handle(ActionEvent event) {
+
+            // Remove Self From World
+            World.sharedInstance.removeSpritesToRemove();
+
+        }
+            
+        }));
+        
+        fiveSecondDelay.setCycleCount(1);
+        fiveSecondDelay.play();
+        
+    }
 }
