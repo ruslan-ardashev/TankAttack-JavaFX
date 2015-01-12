@@ -71,4 +71,10 @@ public class Player extends Sprite {
         
     }
     
+    private void displayDeath() {
+
+        this.setImage(new Image(getClass().getResourceAsStream("normalDeath.png")));
+    
+    }
+    
 }
