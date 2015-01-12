@@ -20,7 +20,6 @@ public class Bullet extends Sprite {
     public Bullet(double x, double y, World world, boolean goingUp) {
         
         super(Bullet.imageName, x, y, world);
-        
         this.goingUp = goingUp;
         
     }
