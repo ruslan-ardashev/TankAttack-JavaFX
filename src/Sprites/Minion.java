@@ -5,6 +5,7 @@
  */
 package Sprites;
 
+import javafx.scene.image.*;
 import tankattack.*;
 
 /**
@@ -29,11 +30,17 @@ public class Minion extends Enemy {
         this.rightXLimit = rightXLimit;
         
         this.goingRight = goingRight;
-        
+                
     }
     
     @Override
     public void updateEnemyXY() {
+        
+        if (!isAlive) {
+            
+            return;
+            
+        }
         
         if (goingRight) {
             
