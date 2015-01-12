@@ -42,7 +42,7 @@ public abstract class Enemy extends Sprite {
     
     public void checkForDeathAndReactAppropriately() {
 
-        if (this.health <= 0) {
+        if (this.getHealthBar().getHealth() <= 0) {
 
             displayDeath();
             addSelfToSpritesToRemove();

@@ -22,9 +22,7 @@ public class Minion extends Enemy {
     public Minion(double x, double y, World world, double leftXLimit, double rightXLimit, boolean goingRight) {
         
         super(Minion.imageName, x, y, world);
-        this.health = 10.0;
-        this.healthBar = null;
-        System.out.println("in minion constructor, need to create HealthBar");
+        this.setHealthBar(new HealthBar(10.0));
         
         this.leftXLimit = leftXLimit;
         this.rightXLimit = rightXLimit;

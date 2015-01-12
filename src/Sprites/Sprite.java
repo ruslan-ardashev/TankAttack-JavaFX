@@ -21,9 +21,19 @@ public abstract class Sprite extends ImageView {
     private double width;
     private double height;
     
-    public double health;
-    public HealthBar healthBar;
+    private HealthBar healthBar;
        
+    public HealthBar getHealthBar() {
+        
+        return healthBar;
+        
+    }
+    
+    public void setHealthBar(HealthBar bar) {
+        
+        this.healthBar = bar;
+        
+    }
     
     public Sprite(String image, double x, double y, World world) {
         

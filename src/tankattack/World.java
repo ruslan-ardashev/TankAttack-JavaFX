@@ -498,8 +498,9 @@ public abstract class World {
                 if (s.getBoundsInParent().intersects(b.getBoundsInParent())) {
                     
                     b.addSelfToRemoveFromWorldArray();
-                    s.health -= TankAttack.BULLET_DAMAGE;
-                                        
+                    
+                    s.getHealthBar().decrementHealth(TankAttack.BULLET_DAMAGE);
+                                                            
                 }
                 
             }
@@ -510,8 +511,8 @@ public abstract class World {
 
     private void handleCollisionWithEnemy(Enemy s) {
         
-        playerSprite.health = 0;
-        s.health = 0;
+        playerSprite.getHealthBar().instantDeath();
+        s.getHealthBar().instantDeath();
         
     }
 

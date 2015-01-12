@@ -14,9 +14,15 @@ import javafx.scene.shape.*;
  * @author Ruslan
  */
 public class HealthBar extends Group {
-    
+
     private double health;
     private Rectangle greenBar, redBar;
+    
+    public double getHealth() {
+        
+        return health;
+        
+    }
     
     public HealthBar(double health) {
         
@@ -49,6 +55,12 @@ public class HealthBar extends Group {
         readjustSizeOfRectangles();
         
         return (this.health == 0);
+        
+    }
+    
+    public void instantDeath() {
+        
+        this.health = 0;
         
     }
 

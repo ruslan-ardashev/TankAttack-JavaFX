@@ -19,9 +19,8 @@ public class Boss extends Enemy {
     public Boss(double x, double y, World world) {
         
         super(Boss.imageName, x, y, world);
-        this.health = 300.0;
+        this.setHealthBar(new HealthBar(500.0));
         
-        this.healthBar = null;
         System.out.println("TODO: boss healthbar");
         
     }

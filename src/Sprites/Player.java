@@ -16,7 +16,6 @@ public class Player extends Sprite {
     
     public static String imageName = "player.png";
     
-        
     // Performance-Improving Variables
     // created to not create objects @ 60Hz
     private double[] location; //x,y
@@ -26,9 +25,7 @@ public class Player extends Sprite {
         
         super(Player.imageName, x, y, world);
                 
-        this.health = 100.0;
-        this.healthBar = null;
-        System.out.println("null healthbar for now for player in constructor");
+        this.setHealthBar(new HealthBar(100.0));
                 
     }
      
@@ -74,7 +71,7 @@ public class Player extends Sprite {
     @Override
     public void checkForDeathAndReactAppropriately() {
 
-        if (this.health <= 0) {
+        if (this.getHealthBar().getHealth() <= 0) {
             
             displayDeath();
             this.world.endOfLevelFailure();
