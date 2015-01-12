@@ -13,6 +13,36 @@ import javafx.scene.shape.*;
  */
 public class HealthBar extends Rectangle {
     
+    private double health;
+    private Rectangle greenBar, redBar;
+    
+    public HealthBar(double health) {
+        
+        super();
+        this.health = health;
+        
+    }
+    
+    // return true if dead
+    public boolean decrementHealth(double amount) {
+        
+        this.health -= amount;
+        
+        
+        if (this.health == 0) {
+            
+            return true;
+            
+        }
+        
+        else {
+            
+            return false;
+            
+        }
+        
+    }
+    
     
     
 }
