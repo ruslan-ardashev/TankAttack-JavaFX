@@ -78,5 +78,13 @@ public abstract class Sprite extends ImageView {
         this.width = width;
         
     }
+
+    public void checkForDeathAndReactAppropriately() {
+
+        System.out.println("Calling checkForDeathAndReactAppropriately on a Sprite that doesn't support it.");
+    
+    }
+    
+    
     
 }
