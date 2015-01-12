@@ -56,19 +56,9 @@ public class Boss extends Enemy {
     public boolean isFiring() {
         
         if (isAlive) {
-            double randomChance = Math.random();
-
-            if (randomChance <= .13) {
-
-                return true;
-
-            }
-
-            else {
-
-                return false;
-
-            }
+            
+            return (Math.random() <= .13);
+            
         }
         
         else {
