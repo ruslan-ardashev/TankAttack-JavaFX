@@ -34,4 +34,15 @@ public abstract class Enemy extends Sprite {
         
     }
     
+    public void checkForDeathAndReactAppropriately() {
+
+        if (this.health <= 0) {
+
+            displayDeath();
+            addSelfToSpritesToRemove();
+            removeSelfFromWorldAfterDelay();
+
+        }
+
+    }
 }
