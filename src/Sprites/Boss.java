@@ -33,7 +33,7 @@ public class Boss extends Enemy {
             return;
         }
         
-        double playerLocation = this.world.playerSprite.getTranslateX();
+        double playerLocation = this.world().playerSprite().getTranslateX();
         
         boolean isPlayerToTheRightOfBoss = (playerLocation > this.getTranslateX());
         

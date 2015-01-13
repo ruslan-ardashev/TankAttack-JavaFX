@@ -15,17 +15,21 @@ import tankattack.*;
  */
 public abstract class Sprite extends Group {
     
-    public World world;
-    
     public static String imageName;
     
-    public ImageView image;
-    
+    private World world;
+    private ImageView image;
+    private HealthBar healthBar;
     private double width;
     private double height;
     
-    private HealthBar healthBar;
-       
+    // Setters & Getters (ala Obj. C properties)
+    public World world() {
+        
+        return this.world;
+        
+    }
+    
     public HealthBar getHealthBar() {
         
         return healthBar;
@@ -50,15 +54,15 @@ public abstract class Sprite extends Group {
         
     }
     
-    public double width() {
-        
-        return this.width;
-        
-    }
-    
     public void setHeight(double height) {
         
         this.height = height;
+        
+    }
+    
+    public double width() {
+        
+        return this.width;
         
     }
     
@@ -68,6 +72,7 @@ public abstract class Sprite extends Group {
         
     }
     
+    // Constructor & Other Methods
     public Sprite(String nameImage, double x, double y, World world) {
         
         this.world = world;

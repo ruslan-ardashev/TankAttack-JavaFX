@@ -13,9 +13,11 @@ import tankattack.*;
  */
 public class Bullet extends Sprite {
 
-    public boolean goingUp;
-    
     public static String imageName = "bullet.png";
+    
+    
+    private boolean goingUp;
+    
     
     public Bullet(double x, double y, World world, boolean goingUp) {
         
@@ -61,7 +63,7 @@ public class Bullet extends Sprite {
 
     public void addSelfToRemoveFromWorldArray() {
 
-        this.world.addToOutOfBoundaryBulletsArray(this);
+        this.world().addToOutOfBoundaryBulletsArray(this);
         
     }
     

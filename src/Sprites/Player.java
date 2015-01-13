@@ -75,7 +75,7 @@ public class Player extends Sprite {
         if (this.getHealthBar().getHealth() <= 0) {
             
             displayDeath();
-            this.world.endOfLevelFailure();
+            this.world().endOfLevelFailure();
             
         }
 

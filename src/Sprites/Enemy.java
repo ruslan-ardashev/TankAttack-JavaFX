@@ -75,7 +75,7 @@ public abstract class Enemy extends Sprite {
 
     private void addSelfToSpritesToRemove() {
 
-        this.world.addSpriteToRemove(this);
+        this.world().addSpriteToRemove(this);
     
     }
     
