@@ -44,6 +44,30 @@ public abstract class Sprite extends Group {
     
     }
     
+    public double height() {
+        
+        return this.height;
+        
+    }
+    
+    public double width() {
+        
+        return this.width;
+        
+    }
+    
+    public void setHeight(double height) {
+        
+        this.height = height;
+        
+    }
+    
+    public void setWidth(double width) {
+        
+        this.width = width;
+        
+    }
+    
     public Sprite(String nameImage, double x, double y, World world) {
         
         this.world = world;
@@ -112,30 +136,6 @@ public abstract class Sprite extends Group {
         this.healthBar = new HealthBar(health, HbarX, HbarY, HbarWidth, HbarHeight);
                 
         this.getChildren().add(healthBar);
-        
-    }
-
-    public double height() {
-        
-        return this.height;
-        
-    }
-    
-    public double width() {
-        
-        return this.width;
-        
-    }
-    
-    public void setHeight(double height) {
-        
-        this.height = height;
-        
-    }
-    
-    public void setWidth(double width) {
-        
-        this.width = width;
         
     }
 
