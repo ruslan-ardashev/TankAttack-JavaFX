@@ -36,13 +36,21 @@ public class HealthBar extends Group {
         
     }
     
-    private void initRectangles() {
+    private void initRectangles(double x, double y, double width, double height) {
+                
+        redBar = new Rectangle();
+        redBar.setFill(Color.RED);
+        redBar.setTranslateX(x);
+        redBar.setTranslateY(y);
+        redBar.setHeight(height);
+        redBar.setWidth(width);
         
-        this.greenBar = new Rectangle();       
-        this.greenBar.setFill(Color.GREEN);
-        
-        this.redBar = new Rectangle();
-        this.redBar.setFill(Color.RED);
+        greenBar = new Rectangle();       
+        greenBar.setFill(Color.GREEN);
+        greenBar.setTranslateX(x);
+        greenBar.setTranslateY(y);
+        greenBar.setHeight(height);
+        greenBar.setWidth(width);
         
         // Done in this very specific order for a reason -
         // creates a static red bar. Green bar is overlayed.
