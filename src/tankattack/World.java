@@ -163,43 +163,21 @@ public abstract class World {
     
     public void createPlayerSprite() {
                 
-        Player player = new Player(TankAttack.gameWidth/2 , TankAttack.gameHeight / 2, this);
-                
-        setPlayerSprite(player);
+        playerSprite = new Player(TankAttack.gameWidth/2 , TankAttack.gameHeight / 2, this);
     
     }
 
+    // Very important method.
     private void updateSprites() {
-
-//        System.out.println("All is well. Printing animation 60 times a second.");
         
-        ////// DONE ////////////////////////////
         playerSprite.updateLocation();
-        
-        // Handle Player Firing
-        handleFiring();
-        
-        // Other Updates
+        handleFiring();             // Handle Player Firing
         updateEnemySprites();       // also handles enemy fire
-        
-        // Bullet Movement
-        updateBulletMovements();
-
-        ////// DONE ////////////////////////////
-        
-        ////// IMPLEMENT ////////////////////////////
-        
-        // Register Collisions With Tanks
-        handleCollision();
-        
-        // Register Collisions Between Sprites & Bullets
-        handleCollisionBullets();
-        
+        updateBulletMovements();    // Bullet Movement
+        handleCollision();          // Register Collisions With Tanks
+        handleCollisionBullets();   // Register Collisions Between Sprites & Bullets
         updateAllSpritesToCheckForDeath();
-        
-        // Check for win
-        checkForWin();
-        ////// IMPLEMENT ////////////////////////////
+        checkForWin();              // Check for win
         
     }
 
