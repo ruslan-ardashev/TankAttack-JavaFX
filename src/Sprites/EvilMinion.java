@@ -103,13 +103,13 @@ public class EvilMinion extends Enemy {
 
     private void goLeft() {
 
-        this.setTranslateX(this.getTranslateX() - TankAttack.MINION_SPEED);
+        this.setTranslateX(this.getTranslateX() - TankAttack.EVILMINION_SPEED);
     
     }
 
     private void goRight() {
 
-        this.setTranslateX(this.getTranslateX() + TankAttack.MINION_SPEED);
+        this.setTranslateX(this.getTranslateX() + TankAttack.EVILMINION_SPEED);
     
     }
     
