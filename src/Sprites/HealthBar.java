@@ -60,14 +60,11 @@ public class HealthBar extends Group {
         
     }
     
-    // return true if dead
-    public boolean decrementHealth(double amount) {
+    public void decrementHealth(double amount) {
         
         this.health -= amount;
-        readjustSizeOfRectangles();
-        
-        return (this.health == 0);
-        
+        readjustSizeOfRectangles(amount);
+                
     }
     
     public void instantDeath() {
