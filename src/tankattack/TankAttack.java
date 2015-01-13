@@ -56,6 +56,8 @@ public class TankAttack extends Application {
     private VBox startQuitButtonsBox;
     private VBox difficultyButtonsBox;
     
+    private BorderPane difficultyLabel;
+    
     // Setters & Getters
     public Stage stage() {
         
@@ -83,7 +85,7 @@ public class TankAttack extends Application {
         launchAnimationForDisplayMenu(stage);
         
         // Create Buttons
-        createButtonsForDisplayMenu();
+        createItemsForDisplayMenu();
         
         stage.setScene(mainMenu);
         stage.show();
@@ -99,56 +101,18 @@ public class TankAttack extends Application {
         
     }
     
-    private void createButtonsForDisplayMenu() {
+    private void createItemsForDisplayMenu() {
         
         VBox v = new VBox(TankAttack.gameHeight/20);
         startQuitButtonsBox = v;
         
         v.setTranslateY(TankAttack.gameHeight / 2);
-        
+        v.setMaxHeight(gameHeight / 2);
         v.setTranslateX(TankAttack.gameWidth/2 - TankAttack.buttonWidth/2);
         
-        Button start = this.createButton("START");
-        
-        start.setOnAction(new EventHandler<ActionEvent>() {
+        createButtonsForMainMenu(v);
+        createDifficultyLabelForMainMenu(v);
 
-            public void handle(ActionEvent event) {
-                
-                stage.setTitle("TANK ATTACK");
-                world = new FirstWorld();
-                initCurrWorld();
-                
-            }
-            
-        });
-        
-        Button difficulty = this.createButton("DIFFICULTY");
-        
-        difficulty.setOnAction(new EventHandler<ActionEvent>() {
-
-            public void handle(ActionEvent event) {
-                
-                displayDifficultyMenu();
-                
-            }
-            
-        });
-        
-        Button quit = this.createButton("QUIT");
-        
-        quit.setOnAction(new EventHandler<ActionEvent>() {
-
-            public void handle(ActionEvent event) {
-                
-                System.out.println("Quit button pressed.");
-                Platform.exit();
-                
-            }
-            
-        });
-                
-        v.getChildren().addAll(start, difficulty, quit);
-        
         root.getChildren().add(v);
         
     }
@@ -242,7 +206,7 @@ public class TankAttack extends Application {
     private void removeDifficultyButtonsAndDisplayMenuAgain() {
      
         root.getChildren().remove(difficultyButtonsBox);
-        createButtonsForDisplayMenu();
+        createItemsForDisplayMenu();
         
     }
     
@@ -385,6 +349,93 @@ public class TankAttack extends Application {
         
         root.getChildren().add(tank);
         
+    }
+
+    private void createButtonsForMainMenu(VBox v) {
+        
+        Button start = this.createButton("START");
+        
+        start.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event) {
+                
+                stage.setTitle("TANK ATTACK");
+                world = new FirstWorld();
+                initCurrWorld();
+                
+            }
+            
+        });
+        
+        Button difficulty = this.createButton("DIFFICULTY");
+        
+        difficulty.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event) {
+                
+                displayDifficultyMenu();
+                
+            }
+            
+        });
+        
+        Button quit = this.createButton("QUIT");
+        
+        quit.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event) {
+                
+                System.out.println("Quit button pressed.");
+                Platform.exit();
+                
+            }
+            
+        });
+                
+        v.getChildren().addAll(start, difficulty, quit);
+        
+    }
+
+    private void createDifficultyLabelForMainMenu(VBox v) {
+
+        if (difficultyLabel != null) {
+            root.getChildren().remove(difficultyLabel);
+            difficultyLabel = null;
+        }
+        
+        BorderPane b = new BorderPane();
+        b.setPrefSize(gameWidth, gameHeight);
+        difficultyLabel = b;
+        b.setMinWidth(TankAttack.gameWidth);
+        
+        StringBuilder sb = new StringBuilder();
+        sb.append("Difficulty: ");
+        
+        if (TankAttack.DIFFICULTY_SETTING == 1) {
+            
+            sb.append("Easy");
+            
+        }
+        
+        else if (TankAttack.DIFFICULTY_SETTING == 2) {
+            
+            sb.append("Medium");
+            
+        }
+        
+        else if (TankAttack.DIFFICULTY_SETTING == 3) {
+            
+            sb.append("Hard");
+            
+        }
+        
+        Label l = new Label(sb.toString());
+        l.setFont(new Font("Arial", 30));
+        l.setTextFill(Color.WHITE);
+        
+        b.setBottom(l);
+        root.getChildren().add(b);
+                    
     }
 
 }
