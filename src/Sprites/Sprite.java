@@ -141,6 +141,9 @@ public abstract class Sprite extends Group {
 
     public void checkForDeathAndReactAppropriately() {
 
+        // This is a virtual function.
+        // The sprites that need this and use it overwrite it.
+            // player, enemy (minion & boss)
         System.out.println("Calling checkForDeathAndReactAppropriately on a Sprite that doesn't support it.");
     
     }
