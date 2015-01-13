@@ -199,6 +199,27 @@ public class TankAttack extends Application {
         launch(args);
     }
 
+    private void animateTankGoingBackAndForth() {
+
+        ImageView tank = new ImageView();
+        tank.xProperty().set(-gameWidth/3);
+        tank.translateYProperty().set(gameHeight*5/6);
+        
+        tank.setImage(new Image(getClass().getResourceAsStream("tank.png")));
+        
+        KeyValue kValueX = new KeyValue(tank.xProperty(), gameWidth+gameWidth/3);
+        KeyFrame kFrame = new KeyFrame(Duration.millis(8000) , kValueX); 
+        
+        Timeline timeL = new Timeline();  
+        timeL.getKeyFrames().add(kFrame);  
+        timeL.setAutoReverse(true);
+        timeL.setCycleCount(Animation.INDEFINITE);  
+        timeL.play();  
+        
+        root.getChildren().add(tank);
+        
+    }
+
 }
 
 
