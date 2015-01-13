@@ -19,9 +19,10 @@ public class Boss extends Enemy {
     public Boss(double x, double y, World world) {
         
         super(Boss.imageName, x, y, world);
-        this.setHealthBar(new HealthBar(500.0));
         
-        System.out.println("TODO: boss healthbar");
+        // health, width parent, height parent, isEnemy
+        this.initHealthBar(2000.0, this.width(), this.height(), true);
+        
         
     }
 
