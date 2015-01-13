@@ -149,6 +149,14 @@ public class TankAttack extends Application {
         
     }
     
+    
+    private void removeDifficultyButtonsAndDisplayMenuAgain() {
+     
+        root.getChildren().remove(difficultyButtonsBox);
+        createButtonsForDisplayMenu();
+        
+    }
+    
     private Button createButton(String text) {
         
         Button returnButton = new Button();
