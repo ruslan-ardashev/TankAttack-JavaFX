@@ -319,7 +319,19 @@ public abstract class World {
             
         }
         
-        // TODO: Implement space bar to shoot, and cheat codes, here.
+        // Cheat Codes
+        else if (newState && keyCode == KeyCode.Y) {
+            
+            this.endOfLevelSuccess();
+            
+        }
+        
+        else if (newState && keyCode == KeyCode.I) {
+            
+            playerSprite.getHealthBar().infiniteHealth();
+            
+        }
+        
         
     }
 
