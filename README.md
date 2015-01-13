@@ -39,7 +39,7 @@
 **Impressions/Suggestions:**
 * Quick, fun, and easy assignment. If only the rest were like this....
 
-*The Idea*
+# **The Idea** #
 
 ![](https://github.com/duke-compsci308-spring2015/game_ra86/blob/master/Design/plan.png)
 
