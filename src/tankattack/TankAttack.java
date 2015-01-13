@@ -44,6 +44,8 @@ public class TankAttack extends Application {
     public static double BULLET_SPEED = 5.5;
     public static double BULLET_DAMAGE = 10;
     
+    public static int DIFFICULTY_SETTING = 2;
+    
     private Stage stage;
     private World world;
     private Scene scene;
@@ -210,6 +212,7 @@ public class TankAttack extends Application {
         MINION_SPEED = 1.4;
         EVILMINION_SPEED = 2.5;
         BOSS_SPEED = 1;
+        DIFFICULTY_SETTING = 1;
         
     }
     
@@ -218,6 +221,7 @@ public class TankAttack extends Application {
         MINION_SPEED = 2.1;
         EVILMINION_SPEED = 3.5;
         BOSS_SPEED = 1.4;
+        DIFFICULTY_SETTING = 2;
         
     }
     
@@ -226,6 +230,7 @@ public class TankAttack extends Application {
         MINION_SPEED = 3;
         EVILMINION_SPEED = 4.2;
         BOSS_SPEED = 3;
+        DIFFICULTY_SETTING = 3;
         
     }
     
