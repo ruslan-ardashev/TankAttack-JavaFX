@@ -40,7 +40,9 @@ public class TankAttack extends Application {
     public static double PLAYER_SPEED = 2.5;
     public static double MINION_SPEED = 2.1;
     public static double EVILMINION_SPEED = 3.5;
+    public static double KAMIKADZEEMINION_SPEED = 5;
     public static double BOSS_SPEED = 1.4;
+    
     public static double BULLET_SPEED = 5.5;
     public static double BULLET_DAMAGE = 10;
     
@@ -211,6 +213,7 @@ public class TankAttack extends Application {
         
         MINION_SPEED = 1.4;
         EVILMINION_SPEED = 2.5;
+        KAMIKADZEEMINION_SPEED = 3;
         BOSS_SPEED = 1;
         DIFFICULTY_SETTING = 1;
         
@@ -220,6 +223,7 @@ public class TankAttack extends Application {
         
         MINION_SPEED = 2.1;
         EVILMINION_SPEED = 3.5;
+        KAMIKADZEEMINION_SPEED = 5;
         BOSS_SPEED = 1.4;
         DIFFICULTY_SETTING = 2;
         
@@ -229,6 +233,7 @@ public class TankAttack extends Application {
         
         MINION_SPEED = 3;
         EVILMINION_SPEED = 4.2;
+        KAMIKADZEEMINION_SPEED = 5.6;
         BOSS_SPEED = 3;
         DIFFICULTY_SETTING = 3;
         
@@ -267,6 +272,13 @@ public class TankAttack extends Application {
     public void transitionFromSecondWorldToThirdWorld() {
         
         world = new ThirdWorld();
+        initCurrWorld();
+        
+    }
+    
+    public void transitionFromThirdWorldToFourthWorld() {
+        
+        world = new FourthWorld();
         initCurrWorld();
         
     }
