@@ -15,8 +15,10 @@ import javafx.scene.shape.*;
  */
 public class HealthBar extends Group {
 
-    private double health;
+    private double health, initialHealth;
     private Rectangle greenBar, redBar;
+    
+    double widthBar;
     
     public double getHealth() {
         
