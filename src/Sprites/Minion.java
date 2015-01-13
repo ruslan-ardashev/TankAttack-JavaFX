@@ -22,12 +22,14 @@ public class Minion extends Enemy {
     public Minion(double x, double y, World world, double leftXLimit, double rightXLimit, boolean goingRight) {
         
         super(Minion.imageName, x, y, world);
-        this.setHealthBar(new HealthBar(10.0));
         
         this.leftXLimit = leftXLimit;
         this.rightXLimit = rightXLimit;
         
         this.goingRight = goingRight;
+        
+        // health, width parent, height parent, isEnemy
+        this.initHealthBar(200.0, this.width(), this.height(), true);
                 
     }
     
