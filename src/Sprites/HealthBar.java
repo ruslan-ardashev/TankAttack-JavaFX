@@ -70,13 +70,27 @@ public class HealthBar extends Group {
     public void instantDeath() {
         
         this.health = 0;
+        this.readjustSizeOfRectangles(-1.0);
         
     }
 
     private void readjustSizeOfRectangles(double amountDecrement) {
 
-        double percent = health / initialHealth;
+        double percent;
         
+        if (amountDecrement == -1.0) {
+            
+            // Collided with enemy, instant loss
+            percent = 0.0;
+            
+        }
+        
+        else {
+            
+            percent = health / initialHealth;
+            
+        }
+
         greenBar.setWidth(percent * widthBar);
     
     }
