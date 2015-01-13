@@ -127,7 +127,7 @@ public class TankAttack extends Application {
             public void handle(ActionEvent event) {
                 
                 stage.setTitle("TANK ATTACK");
-                currWorld = new FirstWorld(stage);
+                world = new FirstWorld();
                 initCurrWorld();
                 
             }
