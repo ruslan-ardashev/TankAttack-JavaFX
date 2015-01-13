@@ -27,26 +27,20 @@ import javafx.util.*;
  */
 public abstract class World {
     
-    public static boolean isListeningForInput = true;
-    
-    private Stage myStage;
-    
     public static World sharedInstance;
+    public static boolean isListeningForInput = true;
     
     private Scene scene;
     private Group root;
-    private Circle myEnemy;
-    private Point2D myEnemyVelocity;
     private Random myGenerator = new Random();
+    private Timeline timeline;
+    private Player playerSprite;
     
+    // Sprite-Related Instance Vars
     private ArrayList<Sprite> sprites;
     private ArrayList<Sprite> spritesToRemove;
     private ArrayList<Bullet> bullets;
     private ArrayList<Bullet> bulletsToRemove;
-    public Player playerSprite;
-        
-    private Timeline timeline;
-
     
     // Setters, Getters
     public void addSprite(Sprite s) {
@@ -92,19 +86,19 @@ public abstract class World {
         
     }
         
+    public Player playerSprite() {
+        
+        return playerSprite;
+        
+    }
+    
     public void setPlayerSprite(Player player) {
         
         playerSprite = player;
         
     }
     
-    public Player getPlayerSprite() {
-        
-        return playerSprite;
-        
-    }
-    
-    public Group getGroup() {
+    public Group group() {
         
         return this.root;
         
@@ -116,7 +110,7 @@ public abstract class World {
         
     }
     
-    public Scene getScene() {
+    public Scene scene() {
         
         return this.scene;
         
@@ -131,14 +125,8 @@ public abstract class World {
     // Real Methods
         // Constructors
         // Create Scene, Then Init Animation. Rest of methods are helpers.
-    
     public World() {
-        throw new UnsupportedOperationException("need to pass in a stage"); 
-    }
-    
-    public World(Stage stage) {
         
-        this.myStage = stage;
         World.sharedInstance = this;
         
     }
