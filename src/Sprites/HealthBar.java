@@ -31,9 +31,35 @@ public class HealthBar extends Group {
         
         super();
         this.health = health;
+        this.didCheatToIncreaseHealth = false;
         this.initialHealth = health;
         this.widthBar = width;
         this.initRectangles(x, y, width, height);
+        
+    }
+    
+    public void decrementHealth(double amount) {
+        
+        this.health -= amount;
+        readjustSizeOfRectangles(amount);
+                
+    }
+    
+    public void instantDeath() {
+        
+        if (!didCheatToIncreaseHealth) {
+            
+            this.health = 0;
+            this.readjustSizeOfRectangles(-1.0);
+            
+        }
+
+    }
+    
+    public void infiniteHealth() {
+        
+        this.health = Double.MAX_VALUE;
+        this.didCheatToIncreaseHealth = true;
         
     }
     
@@ -61,41 +87,37 @@ public class HealthBar extends Group {
         
     }
     
-    public void decrementHealth(double amount) {
-        
-        this.health -= amount;
-        readjustSizeOfRectangles(amount);
-                
-    }
-    
-    public void instantDeath() {
-        
-        this.health = 0;
-        this.readjustSizeOfRectangles(-1.0);
-        
-    }
-
     private void readjustSizeOfRectangles(double amountDecrement) {
 
-        double percent;
-        
-        if (amountDecrement == -1.0) {
+        if (!didCheatToIncreaseHealth) {
             
-            // Collided with enemy, instant loss
-            percent = 0.0;
+            double percent;
+        
+            if (amountDecrement == -1.0) {
+
+                // Collided with enemy, instant loss
+                percent = 0.0;
+
+            }
+
+            else {
+
+                percent = health / initialHealth;
+
+            }
+
+            greenBar.setWidth(percent * widthBar);
             
         }
         
         else {
             
-            percent = health / initialHealth;
+            greenBar.setWidth(widthBar);
             
         }
-
-        greenBar.setWidth(percent * widthBar);
+        
+        
     
     }
-    
-    
     
 }
