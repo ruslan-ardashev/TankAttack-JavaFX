@@ -15,10 +15,11 @@ import javafx.scene.shape.*;
  */
 public class HealthBar extends Group {
 
+    private boolean didCheatToIncreaseHealth;
+    
     private double health, initialHealth;
     private Rectangle greenBar, redBar;
-    
-    double widthBar;
+    private double widthBar;
     
     public double getHealth() {
         
