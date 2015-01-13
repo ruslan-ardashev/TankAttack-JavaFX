@@ -5,6 +5,7 @@
  */
 package Sprites;
 
+import javafx.scene.*;
 import javafx.scene.image.*;
 import tankattack.*;
 
