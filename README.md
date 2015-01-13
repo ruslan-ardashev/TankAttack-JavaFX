@@ -10,7 +10,7 @@
 
 **Date finished:** 01/12/15
 
-**Hours worked:** 13ish-hrs
+**Hours worked:** 16ish-hrs
 
 **Resources used:** Google, Prof. Duvall's JavaFX Demo, Java API Documentation, Google, StackOverflow (comments in code where used)
 
