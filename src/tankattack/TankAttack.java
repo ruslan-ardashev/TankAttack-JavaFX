@@ -49,6 +49,9 @@ public class TankAttack extends Application {
     private Scene scene;
     private Group root;
     
+    private VBox startQuitButtonsBox;
+    private VBox difficultyButtonsBox;
+    
     // Setters & Getters
     public Stage stage() {
         
