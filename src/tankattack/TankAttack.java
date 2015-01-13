@@ -149,6 +149,85 @@ public class TankAttack extends Application {
         
     }
     
+    private void displayDifficultyMenu() {
+        
+        root.getChildren().remove(this.startQuitButtonsBox);
+        
+        VBox v = new VBox(TankAttack.gameHeight/20);
+        difficultyButtonsBox = v;
+        
+        v.setTranslateY(TankAttack.gameHeight / 2);
+        
+        v.setTranslateX(TankAttack.gameWidth/2 - TankAttack.buttonWidth/2);
+        
+        Button easy = this.createButton("EASY");
+        
+        easy.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event) {
+                
+                TankAttack.setEasy();
+                removeDifficultyButtonsAndDisplayMenuAgain();
+                
+            }
+            
+        });
+        
+        Button medium = this.createButton("MEDIUM");
+        
+        medium.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event) {
+                
+                TankAttack.setMedium();
+                removeDifficultyButtonsAndDisplayMenuAgain();
+                
+            }
+            
+        });
+        
+        Button hard = this.createButton("HARD");
+        
+        hard.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event) {
+                
+                TankAttack.setHard();
+                removeDifficultyButtonsAndDisplayMenuAgain();
+                
+            }
+            
+        });
+                
+        v.getChildren().addAll(easy, medium, hard);
+        
+        root.getChildren().add(v);
+        
+    }
+    
+    public static void setEasy() {
+        
+        MINION_SPEED = 1.4;
+        EVILMINION_SPEED = 2.5;
+        BOSS_SPEED = 1;
+        
+    }
+    
+    public static void setMedium() {
+        
+        MINION_SPEED = 2.1;
+        EVILMINION_SPEED = 3.5;
+        BOSS_SPEED = 1.4;
+        
+    }
+    
+    public static void setHard() {
+        
+        MINION_SPEED = 3;
+        EVILMINION_SPEED = 4.2;
+        BOSS_SPEED = 3;
+        
+    }
     
     private void removeDifficultyButtonsAndDisplayMenuAgain() {
      
