@@ -24,11 +24,12 @@ public class Player extends Sprite {
     public Player(double x, double y, World world) {
         
         super(Player.imageName, x, y, world);
-                
-        this.setHealthBar(new HealthBar(100.0));
-                
+        
+        // health, width parent, height parent, isEnemy
+        this.initHealthBar(100.0, this.width(), this.height(), false);
+                                
     }
-     
+         
     public void updateLocation() {
                 
         if (location == null) {
