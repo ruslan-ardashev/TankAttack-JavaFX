@@ -24,10 +24,11 @@ import javafx.util.*;
  */
 public class TankAttack extends Application {
     
-    public static final double gameWidth = 600;
-    public static final double gameHeight = 600;
+    public static TankAttack sharedInstance;
     
     public static final int NUM_FRAMES_PER_SECOND = 30;
+    public static final double gameWidth = 600;
+    public static final double gameHeight = 600;
     
     public static double buttonWidth = gameWidth / 5;
     public static double buttonHeight = gameWidth / 10;
@@ -36,37 +37,43 @@ public class TankAttack extends Application {
     public static double MINION_SPEED = 2.1;
     public static double BOSS_SPEED = 1.4;
     public static double BULLET_SPEED = 5.5;
-    
     public static double BULLET_DAMAGE = 10;
     
-    public static TankAttack sharedInstance;
-    private Stage currStage;
-    private World currWorld;
-    private Scene currScene;
+    private Stage stage;
+    private World world;
+    private Scene scene;
     
+    // Setters & Getters
+    public Stage stage() {
+        
+        return this.stage;
+        
+    }
+    
+    // Actual Methods
     @Override
     public void start(Stage primaryStage) {
         
         sharedInstance = this;
-        currStage = primaryStage;
+        stage = primaryStage;
         displayStartMenu();
 
     }
     
     public void displayStartMenu() {
         
-        currStage.setTitle("Main Menu");
+        stage.setTitle("Main Menu");
         Group menuRoot = new Group();
         final Scene mainMenu = new Scene(menuRoot, TankAttack.gameWidth, TankAttack.gameHeight, Color.CORNFLOWERBLUE);
         
         // Launch Background Animation
-        launchAnimationForDisplayMenu(currStage, menuRoot);
+        launchAnimationForDisplayMenu(stage, menuRoot);
         
         // Create Buttons
-        createButtonsForDisplayMenu(currStage, menuRoot);
+        createButtonsForDisplayMenu(stage, menuRoot);
         
-        currStage.setScene(mainMenu);
-        currStage.show();
+        stage.setScene(mainMenu);
+        stage.show();
         
     }
     
@@ -164,8 +171,14 @@ public class TankAttack extends Application {
     
     public void transitionFromFirstWorldToSecondWorld() {
         
-        System.out.println("[transitionFromFirstWorldToSecondWorld] called");
-        currWorld = new SecondWorld(currStage);
+        world = new SecondWorld();
+        initCurrWorld();
+        
+    }
+    
+    public void transitionFromSecondWorldToThirdWorld() {
+        
+        world = new ThirdWorld();
         initCurrWorld();
         
     }
@@ -175,9 +188,9 @@ public class TankAttack extends Application {
         // Prior to this method, set currWorld. 
         // rest is good to go.
         
-        currScene = currWorld.createScene();
-        currStage.setScene(currScene);
-        currWorld.initAnimation();
+        scene = world.createScene();
+        stage.setScene(scene);
+        world.initAnimation();
         
     }
 
