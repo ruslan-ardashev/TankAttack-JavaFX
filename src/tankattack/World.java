@@ -236,36 +236,39 @@ public abstract class World {
     
     public void showEndOfLevelTextSuccess() {
         
-        Label l = new Label("SUCCESS");
-        
-        // http://docs.oracle.com/javafx/2/ui_controls/label.htm
-        l.setFont(new Font("Arial", 60));
-        l.setTextFill(Color.GREEN);
-        
-        l.setTranslateY(TankAttack.gameHeight / 2.5);
-        
-        // TODO The x is hardcoded. fix it in case game dimensions change
-        l.setTranslateX(180);
-        
-        root.getChildren().add(l);
-        
+        createLabelAtCenterForTextForSuccess("SUCCESS", true);
         
     }
     
     private void showEndOfLevelFailure() {
                 
-        Label l = new Label("FAILURE");
+       createLabelAtCenterForTextForSuccess("FAILURE", false);
         
-        // http://docs.oracle.com/javafx/2/ui_controls/label.htm
+    }
+    
+    private void createLabelAtCenterForTextForSuccess(String text, boolean success) {
+        
+        BorderPane b = new BorderPane();
+        b.setMinWidth(TankAttack.gameWidth);
+        b.setMinHeight(TankAttack.gameHeight);
+        
+        Label l = new Label(text);
         l.setFont(new Font("Arial", 60));
-        l.setTextFill(Color.RED);
         
-        l.setTranslateY(TankAttack.gameHeight / 2.5);
+        if (!success) {
+            
+            l.setTextFill(Color.RED);
+            
+        }
         
-        // TODO The x is hardcoded. fix it in case game dimensions change
-        l.setTranslateX(180);
+        else {
+            
+            l.setTextFill(Color.GREEN);
+            
+        }
         
-        root.getChildren().add(l);
+        b.setCenter(l);
+        root.getChildren().add(b);
         
     }
     
