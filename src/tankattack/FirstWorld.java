@@ -21,12 +21,6 @@ import javax.imageio.*;
  */
 public class FirstWorld extends World {
 
-    FirstWorld(Stage primaryStage) {
-
-        super(primaryStage);
-        
-    }
-
     @Override
     public void createInitialSprites() {
         
