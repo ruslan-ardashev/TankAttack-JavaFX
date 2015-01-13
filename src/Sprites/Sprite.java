@@ -38,22 +38,23 @@ public abstract class Sprite extends Group {
         
     }
     
-    public Sprite(String image, double x, double y, World world) {
+    public void setImage(Image i) {
+        
+        this.image.setImage(i);
+    
+    }
+    
+    public Sprite(String nameImage, double x, double y, World world) {
         
         this.world = world;
-        
-        if (image == null) {
-            System.out.println("Forgot to pass image into sprite being created!");
-        }
+        this.initImageAndSize(nameImage);
                 
-        this.setImage(new Image(getClass().getResourceAsStream(image)));
-        
-        this.width = this.getImage().getWidth();
-        this.height = this.getImage().getHeight();
-        
         this.setTranslateX( x -  width/2 );
         this.setTranslateY( y - height/2 );
         
+        this.initSetWorld(world);
+        
+    }
         if (world == null) {
             
             System.out.println("FORGOT TO SET WORLD, [new Sprite()]");
