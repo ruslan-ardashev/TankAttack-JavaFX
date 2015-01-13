@@ -69,57 +69,30 @@ public class TankAttack extends Application {
     public void displayStartMenu() {
         
         stage.setTitle("Main Menu");
-        Group menuRoot = new Group();
-        final Scene mainMenu = new Scene(menuRoot, TankAttack.gameWidth, TankAttack.gameHeight, Color.CORNFLOWERBLUE);
+        root = new Group();
+        final Scene mainMenu = new Scene(root, TankAttack.gameWidth, TankAttack.gameHeight, Color.SEAGREEN);
         
         // Launch Background Animation
-        launchAnimationForDisplayMenu(stage, menuRoot);
+        launchAnimationForDisplayMenu(stage);
         
         // Create Buttons
-        createButtonsForDisplayMenu(stage, menuRoot);
+        createButtonsForDisplayMenu(stage);
         
         stage.setScene(mainMenu);
         stage.show();
         
+        slideInTitle();
+        
     }
     
-    private void launchAnimationForDisplayMenu(Stage stage, Group root) {
-        
-        // Most of this method was obtained from stackoverflow.com
-        
-        Group circles = new Group();
+    private void launchAnimationForDisplayMenu(Stage stage) {
 
-        for(int cont = 0 ; cont < 30 ; cont++) {  
-            
-            Circle circle = new Circle();  
-            circle.setFill(Color.CRIMSON);  
-            circle.setEffect(new GaussianBlur(Math.random() * 8 + 2));  
-            circle.setOpacity(Math.random());  
-            circle.setRadius(Math.random()*30);  
-            circle.setCenterX(TankAttack.gameWidth * Math.random());
-            circle.setCenterY(TankAttack.gameHeight * Math.random());
-             
-            circles.getChildren().add(circle);  
-             
-            double randScale = (Math.random() * 4) + 1;  
-             
-            KeyValue kValueX = new KeyValue(circle.scaleXProperty() , randScale);  
-            KeyValue kValueY = new KeyValue(circle.scaleYProperty() , randScale);  
-            KeyFrame kFrame = new KeyFrame(Duration.millis(5000 + (Math.random() * 5000)) , kValueX , kValueY);  
-             
-            Timeline timeL = new Timeline();  
-            timeL.getKeyFrames().add(kFrame);  
-            timeL.setAutoReverse(true);  
-            timeL.setCycleCount(Animation.INDEFINITE);  
-            timeL.play();  
-            
-        }  
-        
-        root.getChildren().add(circles);
+        animateTankGoingBackAndForth();
+        animateCircleExplosions();
         
     }
     
-    private void createButtonsForDisplayMenu(Stage stage, Group root) {
+    private void createButtonsForDisplayMenu(Stage stage) {
         
         VBox v = new VBox(TankAttack.gameHeight/20);
         v.setTranslateY(TankAttack.gameHeight / 2);
@@ -202,6 +175,74 @@ public class TankAttack extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    private void slideInTitle() {
+
+        BorderPane b = new BorderPane();
+        b.setMinWidth(TankAttack.gameWidth);
+        b.translateYProperty().set(-60.0);
+        
+        Label l = new Label("TANK ATTACK");
+        l.setFont(new Font("Arial", 80));
+        l.setTextFill(Color.GREEN);
+        
+        b.setCenter(l);
+        
+        KeyValue kVal = new KeyValue(b.translateYProperty(), TankAttack.gameHeight/3);
+        KeyFrame k = new KeyFrame(Duration.millis(3000), kVal);
+               
+        Timeline timeL = new Timeline();  
+        timeL.getKeyFrames().add(k);  
+        timeL.setCycleCount(1);  
+        timeL.play();  
+        
+        root.getChildren().add(b);
+    
+    }
+
+    private void animateCircleExplosions() {
+ 
+        // Most of this method was obtained from stackoverflow.com
+        
+        Group circles = new Group();
+
+        for(int cont = 0 ; cont < 30 ; cont++) {  
+            
+            Circle circle = new Circle();  
+            
+            if (Math.random() <= 0.5) {
+                circle.setFill(Color.CRIMSON); 
+            }
+            
+            else {
+                circle.setFill(Color.YELLOW);
+            }
+            
+            circle.setEffect(new GaussianBlur(Math.random() * 8 + 2));  
+            circle.setOpacity(Math.random());  
+            circle.setRadius(Math.random()*30);  
+            circle.setCenterX(TankAttack.gameWidth * Math.random());
+            circle.setCenterY(TankAttack.gameHeight * Math.random());
+             
+            circles.getChildren().add(circle);  
+             
+            double randScale = (Math.random() * 4) + 1;  
+             
+            KeyValue kValueX = new KeyValue(circle.scaleXProperty() , randScale);  
+            KeyValue kValueY = new KeyValue(circle.scaleYProperty() , randScale);  
+            KeyFrame kFrame = new KeyFrame(Duration.millis(5000 + (Math.random() * 5000)) , kValueX , kValueY);  
+             
+            Timeline timeL = new Timeline();  
+            timeL.getKeyFrames().add(kFrame);  
+            timeL.setAutoReverse(true);  
+            timeL.setCycleCount(Animation.INDEFINITE);  
+            timeL.play();  
+            
+        }  
+        
+        root.getChildren().add(circles);
+    
     }
 
     private void animateTankGoingBackAndForth() {
