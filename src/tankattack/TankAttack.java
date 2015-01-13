@@ -9,12 +9,16 @@ import javafx.animation.*;
 import javafx.application.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.*;
 import javafx.scene.*;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.scene.effect.*;
+import javafx.scene.image.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.*;
 import javafx.scene.shape.*;
+import javafx.scene.text.*;
+import javafx.scene.transform.*;
 import javafx.stage.Stage;
 import javafx.util.*;
 
