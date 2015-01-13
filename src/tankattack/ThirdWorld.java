@@ -28,7 +28,7 @@ public class ThirdWorld extends World {
     @Override
     public void signalEndOfLevel() {
 
-        TankAttack.sharedInstance.displayStartMenu();
+        TankAttack.sharedInstance.transitionFromThirdWorldToFourthWorld();
     
     }
     
