@@ -26,7 +26,24 @@ public class Player extends Sprite {
         super(Player.imageName, x, y, world);
         
         // health, width parent, height parent, isEnemy
-        this.initHealthBar(100.0, this.width(), this.height(), false);
+        
+        if (TankAttack.DIFFICULTY_SETTING == 1) {
+            
+            this.initHealthBar(200.0, this.width(), this.height(), false);
+            
+        }
+        
+        else if (TankAttack.DIFFICULTY_SETTING == 2) {
+         
+            this.initHealthBar(100.0, this.width(), this.height(), false);
+            
+        }
+        
+        else if (TankAttack.DIFFICULTY_SETTING == 3) {
+         
+            this.initHealthBar(50.0, this.width(), this.height(), false);
+            
+        }        
                                 
     }
          

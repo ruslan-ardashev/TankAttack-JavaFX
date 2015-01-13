@@ -20,9 +20,23 @@ public class Boss extends Enemy {
         
         super(Boss.imageName, x, y, world);
         
-        // health, width parent, height parent, isEnemy
-        this.initHealthBar(2000.0, this.width(), this.height(), true);
+        if (TankAttack.DIFFICULTY_SETTING == 1) {
+            
+            this.initHealthBar(1000.0, this.width(), this.height(), true);
+            
+        }
         
+        else if (TankAttack.DIFFICULTY_SETTING == 2) {
+         
+            this.initHealthBar(2000.0, this.width(), this.height(), true);
+            
+        }
+        
+        else if (TankAttack.DIFFICULTY_SETTING == 3) {
+         
+            this.initHealthBar(4000.0, this.width(), this.height(), true);
+            
+        } 
         
     }
 

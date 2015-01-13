@@ -29,7 +29,23 @@ public class Minion extends Enemy {
         this.goingRight = goingRight;
         
         // health, width parent, height parent, isEnemy
-        this.initHealthBar(200.0, this.width(), this.height(), true);
+        if (TankAttack.DIFFICULTY_SETTING == 1) {
+            
+            this.initHealthBar(50.0, this.width(), this.height(), true);
+            
+        }
+        
+        else if (TankAttack.DIFFICULTY_SETTING == 2) {
+         
+            this.initHealthBar(100.0, this.width(), this.height(), true);
+            
+        }
+        
+        else if (TankAttack.DIFFICULTY_SETTING == 3) {
+         
+            this.initHealthBar(200.0, this.width(), this.height(), true);
+            
+        }  
                 
     }
     
