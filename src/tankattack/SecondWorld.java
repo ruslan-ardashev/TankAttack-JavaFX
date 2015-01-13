@@ -16,12 +16,6 @@ import javafx.stage.*;
  */
 public class SecondWorld extends World {
 
-    SecondWorld(Stage stage) {
-
-        super(stage);
-    
-    }
-
     @Override
     public void createInitialSprites() {
         
@@ -44,11 +38,10 @@ public class SecondWorld extends World {
         this.setGroup(new Group());
         createInitialSprites();
         
-        
-        this.setScene(new Scene(this.getGroup(), TankAttack.gameWidth, TankAttack.gameHeight, Color.PURPLE));
-        this.getScene().setOnKeyPressed(e -> handleKeyInput(e));
-        this.getScene().setOnKeyReleased(e -> handleKeyRelease(e));
-        return this.getScene();
+        this.setScene(new Scene(this.group(), TankAttack.gameWidth, TankAttack.gameHeight, Color.PURPLE));
+        this.scene().setOnKeyPressed(e -> handleKeyInput(e));
+        this.scene().setOnKeyReleased(e -> handleKeyRelease(e));
+        return this.scene();
         
     }
 
