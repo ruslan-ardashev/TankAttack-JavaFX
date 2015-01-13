@@ -87,6 +87,34 @@ public abstract class Sprite extends Group {
         this.height = this.image.getImage().getHeight();
         
     }
+    
+    public void initHealthBar(double health, double width, double height, boolean isEnemy) {
+                
+        double HbarX,HbarY,HbarWidth,HbarHeight;
+        
+        HbarX = .15 *  width();
+        HbarWidth = (.85 - .15) *  width();
+                
+        if (isEnemy) {
+            
+            HbarY = .1 * height();
+            
+        }
+        
+        else {
+            
+            HbarY = .8 * height();
+            
+        }
+        
+        HbarHeight = (.9 - .8) * height();
+                
+        this.healthBar = new HealthBar(health, HbarX, HbarY, HbarWidth, HbarHeight);
+                
+        this.getChildren().add(healthBar);
+        
+    }
+
     public double height() {
         
         return this.height;
