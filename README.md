@@ -8,7 +8,7 @@ Name: Ruslan Ardashev ('15)
 
 Date started: 01/09/15
 
-Date finished: N/A
+Date finished: 01/12/15
 
 Hours worked: 13ish-hrs
 
