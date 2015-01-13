@@ -79,7 +79,7 @@ public class TankAttack extends Application {
         launchAnimationForDisplayMenu(stage);
         
         // Create Buttons
-        createButtonsForDisplayMenu(stage);
+        createButtonsForDisplayMenu();
         
         stage.setScene(mainMenu);
         stage.show();
