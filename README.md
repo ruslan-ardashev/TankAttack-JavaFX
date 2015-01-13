@@ -19,13 +19,15 @@ Main class file: TankAttack
 Data (non Java) files needed: 
 * a series of .png's that are included in the same directories as source code
 
+
 How to play the game: UP,DOWN,LEFT,RIGHT to navigate. SPACE to shoot.
 
-Keys/Mouse input: Keys
+Keys/Mouse input: Mouse at Splash Screen, Keys elsewhere
 
 Cheat Keys: 
 * "y" instantly progresses you to the next level (asynchronously). That means that while losing a round, you can press y, be taken to the main menu, then *continue* where you wanted to leave off!
 * "i" grants unlimited health. HealthBar class is implemented to reflect this.
+
 
 Known bugs: N/A
 
