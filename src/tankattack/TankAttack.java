@@ -47,6 +47,7 @@ public class TankAttack extends Application {
     private Stage stage;
     private World world;
     private Scene scene;
+    private Group root;
     
     // Setters & Getters
     public Stage stage() {
