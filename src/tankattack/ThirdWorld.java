@@ -14,21 +14,21 @@ import javafx.stage.*;
  *
  * @author Ruslan
  */
-public class SecondWorld extends World {
+public class ThirdWorld extends World {
 
     @Override
     public void createInitialSprites() {
         
         createPlayerSprite();
         // Other sprites
-        createBossSprite();
+        createEvilMinionSprites();
         
     }
 
     @Override
     public void signalEndOfLevel() {
 
-        TankAttack.sharedInstance.transitionFromSecondWorldToThirdWorld();
+        TankAttack.sharedInstance.displayStartMenu();
     
     }
     
@@ -38,16 +38,22 @@ public class SecondWorld extends World {
         this.setGroup(new Group());
         createInitialSprites();
         
-        this.setScene(new Scene(this.group(), TankAttack.gameWidth, TankAttack.gameHeight, Color.PURPLE));
+        this.setScene(new Scene(this.group(), TankAttack.gameWidth, TankAttack.gameHeight, Color.SEAGREEN));
         this.scene().setOnKeyPressed(e -> handleKeyInput(e));
         this.scene().setOnKeyReleased(e -> handleKeyRelease(e));
         return this.scene();
         
     }
 
-    private void createBossSprite() {
+    private void createEvilMinionSprites() {
 
-        new Boss(TankAttack.gameWidth/2, 80.0, this);
+        // EvilMinion(double x, double y, World world, double leftXLimit, double rightXLimit, boolean goingRight)
+        
+        //         Enemy 1
+        EvilMinion one = new EvilMinion(50.0, 40.0, this, 30.0, 350.0, true);
+        
+        //         Enemy 2
+        EvilMinion two = new EvilMinion(100.0, 60.0, this, 330.0, 540.0, true);
     
     }
     
