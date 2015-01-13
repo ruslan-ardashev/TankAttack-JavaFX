@@ -13,11 +13,13 @@ import tankattack.*;
  *
  * @author Ruslan
  */
-public abstract class Sprite extends ImageView {
+public abstract class Sprite extends Group {
     
     public World world;
     
     public static String imageName;
+    
+    public ImageView image;
     
     private double width;
     private double height;
