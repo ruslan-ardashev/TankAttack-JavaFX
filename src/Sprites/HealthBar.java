@@ -73,9 +73,11 @@ public class HealthBar extends Group {
         
     }
 
-    private void readjustSizeOfRectangles() {
+    private void readjustSizeOfRectangles(double amountDecrement) {
 
+        double percent = health / initialHealth;
         
+        greenBar.setWidth(percent * widthBar);
     
     }
     
