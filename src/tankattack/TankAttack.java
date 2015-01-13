@@ -95,9 +95,11 @@ public class TankAttack extends Application {
         
     }
     
-    private void createButtonsForDisplayMenu(Stage stage) {
+    private void createButtonsForDisplayMenu() {
         
         VBox v = new VBox(TankAttack.gameHeight/20);
+        startQuitButtonsBox = v;
+        
         v.setTranslateY(TankAttack.gameHeight / 2);
         
         v.setTranslateX(TankAttack.gameWidth/2 - TankAttack.buttonWidth/2);
@@ -116,6 +118,18 @@ public class TankAttack extends Application {
             
         });
         
+        Button difficulty = this.createButton("DIFFICULTY");
+        
+        difficulty.setOnAction(new EventHandler<ActionEvent>() {
+
+            public void handle(ActionEvent event) {
+                
+                displayDifficultyMenu();
+                
+            }
+            
+        });
+        
         Button quit = this.createButton("QUIT");
         
         quit.setOnAction(new EventHandler<ActionEvent>() {
@@ -129,7 +143,7 @@ public class TankAttack extends Application {
             
         });
                 
-        v.getChildren().addAll(start, quit);
+        v.getChildren().addAll(start, difficulty, quit);
         
         root.getChildren().add(v);
         
