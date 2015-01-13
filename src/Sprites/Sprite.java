@@ -55,6 +55,9 @@ public abstract class Sprite extends Group {
         this.initSetWorld(world);
         
     }
+    
+    private void initSetWorld(World world) {
+        
         if (world == null) {
             
             System.out.println("FORGOT TO SET WORLD, [new Sprite()]");
@@ -69,6 +72,21 @@ public abstract class Sprite extends Group {
         
     }
     
+    private void initImageAndSize(String nameImage) {
+        
+        this.image = new ImageView();
+        
+        if (image == null) {
+            System.out.println("Forgot to pass image into sprite being created!");
+        }
+                                   
+        this.image.setImage(new Image(getClass().getResourceAsStream(nameImage)));
+        this.getChildren().add(this.image);
+                
+        this.width = this.image.getImage().getWidth();
+        this.height = this.image.getImage().getHeight();
+        
+    }
     public double height() {
         
         return this.height;
