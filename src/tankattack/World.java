@@ -285,6 +285,8 @@ public abstract class World {
     
     private void modifyDirControllerState(KeyEvent key, boolean newState) {
         
+        // newState reflects press(true) or release(false)
+        
         KeyCode keyCode = key.getCode();
                 
         if (keyCode == KeyCode.RIGHT) {
