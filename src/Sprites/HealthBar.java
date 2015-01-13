@@ -26,11 +26,13 @@ public class HealthBar extends Group {
         
     }
     
-    public HealthBar(double health) {
+    public HealthBar(double health, double x, double y, double width, double height) {
         
         super();
         this.health = health;
-        this.initRectangles();
+        this.initialHealth = health;
+        this.widthBar = width;
+        this.initRectangles(x, y, width, height);
         
     }
     
