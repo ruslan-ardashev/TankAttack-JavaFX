@@ -343,12 +343,8 @@ public class TankAttack extends Application {
         KeyValue kValueX = new KeyValue(tank.xProperty(), gameWidth+gameWidth/3);
         KeyFrame kFrame = new KeyFrame(Duration.millis(8000) , kValueX); 
         
-        Timeline timeL = new Timeline();  
-        timeL.getKeyFrames().add(kFrame);  
-        timeL.setAutoReverse(true);
-        timeL.setCycleCount(Animation.INDEFINITE);  
-        timeL.play();  
-        
+        createIndefiniteTimeLineAndAnimateForKeyFrameForAutoReverse(kFrame, true);
+
         root.getChildren().add(tank);
         
     }
@@ -412,8 +408,10 @@ public class TankAttack extends Application {
     private void createDifficultyLabelForMainMenu(VBox v) {
 
         if (difficultyLabel != null) {
+            
             root.getChildren().remove(difficultyLabel);
             difficultyLabel = null;
+            
         }
         
         BorderPane b = new BorderPane();
