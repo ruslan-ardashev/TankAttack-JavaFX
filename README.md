@@ -2,6 +2,8 @@
 
 **Please see Design/DESIGN.pdf for the implementation plan!**
 
+**Built using Netbeans 8.0.2**
+
 ####First project for CompSci 308 Spring 2015####
 
 **Name:** Ruslan Ardashev ('15)
