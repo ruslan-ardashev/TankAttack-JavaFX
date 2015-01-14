@@ -15,9 +15,7 @@ public class DirController {
     public static boolean spacePressed;
     
     // Improvements in speed. No new objects @ 60Hz
-    public static double[] returnArray;
-    public static boolean haventAlreadyRemindedMyself = true;
-    
+    public static double[] returnArray;    
 
     public static double[] getNewXY(double[] currPosition, double itemWidth, double itemHeight, double multiplier) {
         
@@ -28,16 +26,7 @@ public class DirController {
             returnArray = new double[2];
             
         }
-        
-        // In the interest of later improving performance.
-        if (haventAlreadyRemindedMyself) {
-            
-            System.out.println("Ruslan you bozo don't make an array[2] 60 hz. in DirController [getNewXY]");
-            haventAlreadyRemindedMyself = false;
-            
-        }
 
-        // EW. GROSS. Also scan other files for double-creation and put that stuff inside instance variables instead.
         double[] returnArray = new double[2];
         
         if (!upPressed && !downPressed && !leftPressed && !rightPressed) {
