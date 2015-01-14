@@ -294,40 +294,42 @@ public class TankAttack extends Application {
 
         for(int cont = 0 ; cont < 30 ; cont++) {  
             
-            Circle circle = new Circle();  
-            
-            if (Math.random() <= 0.5) {
-                circle.setFill(Color.CRIMSON); 
-            }
-            
-            else {
-                circle.setFill(Color.YELLOW);
-            }
-            
-            circle.setEffect(new GaussianBlur(Math.random() * 8 + 2));  
-            circle.setOpacity(Math.random());  
-            circle.setRadius(Math.random()*30);  
-            circle.setCenterX(TankAttack.gameWidth * Math.random());
-            circle.setCenterY(TankAttack.gameHeight * Math.random());
-             
-            circles.getChildren().add(circle);  
-             
-            double randScale = (Math.random() * 4) + 1;  
-             
-            KeyValue kValueX = new KeyValue(circle.scaleXProperty() , randScale);  
-            KeyValue kValueY = new KeyValue(circle.scaleYProperty() , randScale);  
-            KeyFrame kFrame = new KeyFrame(Duration.millis(5000 + (Math.random() * 5000)) , kValueX , kValueY);  
-             
-            Timeline timeL = new Timeline();  
-            timeL.getKeyFrames().add(kFrame);  
-            timeL.setAutoReverse(true);  
-            timeL.setCycleCount(Animation.INDEFINITE);  
-            timeL.play();  
+            addAnimatedCircleToGroup(circles);
             
         }  
         
         root.getChildren().add(circles);
     
+    }
+    
+    private void addAnimatedCircleToGroup(Group g) {
+        
+        Circle circle = new Circle();  
+            
+        if (Math.random() <= 0.5) {
+            circle.setFill(Color.CRIMSON); 
+        }
+
+        else {
+            circle.setFill(Color.YELLOW);
+        }
+            
+        circle.setEffect(new GaussianBlur(Math.random() * 8 + 2));  
+        circle.setOpacity(Math.random());  
+        circle.setRadius(Math.random()*30);  
+        circle.setCenterX(TankAttack.gameWidth * Math.random());
+        circle.setCenterY(TankAttack.gameHeight * Math.random());
+
+        g.getChildren().add(circle);  
+
+        double randScale = (Math.random() * 4) + 1;  
+
+        KeyValue kValueX = new KeyValue(circle.scaleXProperty() , randScale);  
+        KeyValue kValueY = new KeyValue(circle.scaleYProperty() , randScale);  
+        KeyFrame kFrame = new KeyFrame(Duration.millis(5000 + (Math.random() * 5000)) , kValueX , kValueY);  
+
+        createIndefiniteTimeLineAndAnimateForKeyFrameForAutoReverse(kFrame, true);
+        
     }
 
     private void animateTankGoingBackAndForth() {
@@ -348,6 +350,17 @@ public class TankAttack extends Application {
         timeL.play();  
         
         root.getChildren().add(tank);
+        
+    }
+    
+    private void createIndefiniteTimeLineAndAnimateForKeyFrameForAutoReverse(KeyFrame k, boolean autoReverse) {
+        
+        Timeline t = new Timeline();
+        t.getKeyFrames().add(k);  
+        t.setAutoReverse(autoReverse);
+        t.setCycleCount(Animation.INDEFINITE);
+        t.play(); 
+        
         
     }
 
