@@ -1,8 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+// This entire file is part of my masterpiece, except for the specific, label-creation methods. Those could be improved.
+// Ruslan Ardashev
+
 package tankattack;
 
 import javafx.animation.*;
